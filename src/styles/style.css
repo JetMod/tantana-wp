@@ -5123,6 +5123,85 @@ height: 0;
     left: 155px;
   }
 }
+
+/* ===== Game center hero animations ===== */
+@keyframes gameSectionReveal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes gameTitleFlyLeft {
+  0% { opacity: 0; transform: translateX(-100px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes gameTitleFlyRight {
+  0% { opacity: 0; transform: translateX(100px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes gameShadowReveal {
+  0% { opacity: 0; transform: translate(4px, 4px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes gameContentFadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes gameImageScale {
+  0% { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes gameGhostsSlideLeft {
+  0% { opacity: 0; transform: translateX(-80px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes gameGhostsSlideRight {
+  0% { opacity: 0; transform: translateX(80px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.game-hero-animated {
+  animation: gameSectionReveal 0.5s ease-out;
+}
+.game-hero-animated .game__title_container,
+.game-hero-animated .game__title {
+  overflow: visible;
+}
+.game-hero-animated .game__title {
+  opacity: 0;
+  animation: gameTitleFlyLeft 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
+}
+.game-hero-animated .game__title_span {
+  opacity: 0;
+  animation: gameTitleFlyRight 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s forwards;
+}
+.game-hero-animated .game__title-shadow {
+  opacity: 0;
+  animation: gameShadowReveal 0.6s ease-out 0.3s forwards;
+}
+.game-hero-animated .game__container_one:first-of-type {
+  opacity: 0;
+  animation: gameGhostsSlideLeft 0.7s ease-out 0.6s forwards;
+}
+.game-hero-animated .game__container_one:last-of-type {
+  opacity: 0;
+  animation: gameGhostsSlideRight 0.7s ease-out 0.6s forwards;
+}
+.game-hero-animated .game__container_center {
+  opacity: 0;
+  animation: gameContentFadeIn 0.7s ease-out 0.7s forwards;
+}
+.game-hero-animated .game__img {
+  opacity: 0;
+  animation: gameImageScale 0.8s ease-out 0.8s forwards;
+}
+.game-hero-animated .game__container_text {
+  opacity: 0;
+  animation: gameContentFadeIn 0.6s ease-out 0.9s forwards;
+}
+.game-hero-animated .game__button {
+  opacity: 0;
+  animation: gameContentFadeIn 0.5s ease-out 1s forwards;
+}
+
 @media screen and (max-width: 767px) {
   .game__img {
     width: 309px;
@@ -5781,21 +5860,21 @@ height: 0;
 }
 
 .contact {
-  height: 710px;
+  height: auto;
 }
 @media screen and (max-width: 980px) {
   .contact {
-    height: 610px;
+    height: auto;
   }
 }
 @media screen and (max-width: 670px) {
   .contact {
-    height: 650px;
+    height: auto;
   }
 }
 @media screen and (max-width: 610px) {
   .contact {
-    height: 700px;
+    height: auto;
   }
 }
 .contact__title {
@@ -5872,6 +5951,57 @@ height: 0;
     font-size: 40px;
   }
 }
+
+/* ===== Contact page hero animations ===== */
+@keyframes contactSectionReveal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes contactTitleFadeIn {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes contactShadowReveal {
+  0% { opacity: 0; transform: translate(5px, 5px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes contactContentFadeIn {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes contactMapFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.contact-hero-animated {
+  animation: contactSectionReveal 0.5s ease-out;
+}
+.contact-hero-animated .contact__title_container,
+.contact-hero-animated .contact__title {
+  overflow: visible;
+}
+.contact-hero-animated .contact__title {
+  opacity: 0;
+  animation: contactTitleFadeIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
+}
+.contact-hero-animated .contact__title-shadow {
+  opacity: 0;
+  animation: contactShadowReveal 0.6s ease-out 0.3s forwards;
+}
+.contact-hero-animated .contact__container {
+  opacity: 0;
+  animation: contactContentFadeIn 0.7s ease-out 0.6s forwards;
+}
+.contact-hero-animated .contact__container:nth-child(3) {
+  animation-delay: 0.75s;
+}
+/* Карта — соседний элемент после section */
+.contact-hero-animated + iframe.contact__map {
+  opacity: 0;
+  animation: contactMapFadeIn 0.8s ease-out 1s forwards;
+}
+
 .contact__container {
   display: flex;
   justify-content: space-between;
@@ -5982,18 +6112,85 @@ transition: 0.3s, transform 0.3s;
   margin-bottom: 48px;
   padding-top: 40px;
 }
-.news-page__title {
-  font-family: "Inter", sans-serif;
-  font-size: 78px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0 0 12px;
-  color: #FFC548;
+.news-page__title_container {
+  position: relative;
+  margin: 0 auto;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
-@media screen and (max-width: 768px) {
-  .news-page__title { font-size: 36px; }
+.news-page__title {
+  font-family: "RAYDIS", sans-serif;
+  font-weight: 700;
+  font-size: 140px;
+  line-height: 105%;
+  text-transform: uppercase;
+  color: #FFC548;
+  position: absolute;
+  top: 0;
+  margin-top: 44px;
+  z-index: 2;
+  -webkit-text-stroke: 1px #000;
+}
+@media screen and (max-width: 1440px) {
+  .news-page__title {
+    font-size: 130px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .news-page__title {
+    font-size: 90px;
+  }
+}
+@media screen and (max-width: 670px) {
+  .news-page__title {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .news-page__title {
+    font-size: 40px;
+  }
+}
+.news-page__title-shadow {
+  font-family: "RAYDIS", sans-serif;
+  font-weight: 700;
+  font-size: 140px;
+  line-height: 105%;
+  text-transform: uppercase;
+  color: #232122;
+  position: absolute;
+  top: 8px;
+  margin-top: 40px;
+  z-index: 1;
+}
+@media screen and (max-width: 1440px) {
+  .news-page__title-shadow {
+    font-size: 130px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .news-page__title-shadow {
+    font-size: 90px;
+  }
+}
+@media screen and (max-width: 670px) {
+  .news-page__title-shadow {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .news-page__title-shadow {
+    font-size: 40px;
+  }
 }
 .news-page__subtitle {
+  position: relative;
+  z-index: 3;
+  margin-top: 24px;
   font-size: 17px;
   color: #666;
   line-height: 1.5;
@@ -6005,6 +6202,62 @@ transition: 0.3s, transform 0.3s;
 @media screen and (max-width: 768px) {
   .news-page__subtitle { font-size: 15px; }
 }
+
+/* ===== News page hero animations ===== */
+@keyframes newsHeroReveal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes newsTitleFadeIn {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes newsShadowReveal {
+  0% { opacity: 0; transform: translate(5px, 5px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes newsSubtitleFadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes newsCardReveal {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.news-hero-animated {
+  animation: newsHeroReveal 0.4s ease-out;
+}
+.news-hero-animated .news-page__title_container,
+.news-hero-animated .news-page__title {
+  overflow: visible;
+}
+.news-hero-animated .news-page__title {
+  opacity: 0;
+  animation: newsTitleFadeIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s forwards;
+}
+.news-hero-animated .news-page__title-shadow {
+  opacity: 0;
+  animation: newsShadowReveal 0.6s ease-out 0.3s forwards;
+}
+.news-hero-animated .news-page__subtitle {
+  opacity: 0;
+  animation: newsSubtitleFadeIn 0.6s ease-out 0.4s forwards;
+}
+.news-hero-animated .news-card {
+  opacity: 0;
+  animation: newsCardReveal 0.6s ease-out forwards;
+}
+.news-hero-animated .news-card:nth-child(1) { animation-delay: 0.5s; }
+.news-hero-animated .news-card:nth-child(2) { animation-delay: 0.6s; }
+.news-hero-animated .news-card:nth-child(3) { animation-delay: 0.7s; }
+.news-hero-animated .news-card:nth-child(4) { animation-delay: 0.6s; }
+.news-hero-animated .news-card:nth-child(5) { animation-delay: 0.7s; }
+.news-hero-animated .news-card:nth-child(6) { animation-delay: 0.8s; }
+.news-hero-animated .news-card:nth-child(7) { animation-delay: 0.7s; }
+.news-hero-animated .news-card:nth-child(8) { animation-delay: 0.8s; }
+.news-hero-animated .news-card:nth-child(9) { animation-delay: 0.9s; }
+.news-hero-animated .news-card:nth-child(n+10) { animation-delay: 0.9s; }
 
 .news-page__grid {
   display: grid;
@@ -6656,6 +6909,80 @@ transition: 0.3s, transform 0.3s;
   .news-blog__fon {
     height: 270px;
   }
+}
+
+/* ===== Master classes hero animations — «карточки-рецепты прилетают» ===== */
+@keyframes masterSectionReveal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes masterTitleDrop {
+  0% { opacity: 0; transform: translateY(-80px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes masterSubtitleSlide {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes masterImagePop {
+  0% { opacity: 0; transform: scale(0.4); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes masterButtonFade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes masterCardFly1 {
+  0% { opacity: 0; transform: translate(-100px, -80px) rotate(7deg) scale(0.3); }
+  100% { opacity: 1; transform: translate(0, 0) rotate(7deg) scale(1); }
+}
+@keyframes masterCardFly2 {
+  0% { opacity: 0; transform: translate(-120px, 20px) rotate(-13deg) scale(0.3); }
+  100% { opacity: 1; transform: translate(0, 0) rotate(-13deg) scale(1); }
+}
+@keyframes masterCardFly3 {
+  0% { opacity: 0; transform: translate(100px, -60px) rotate(7deg) scale(0.3); }
+  100% { opacity: 1; transform: translate(0, 0) rotate(7deg) scale(1); }
+}
+@keyframes masterCardFly4 {
+  0% { opacity: 0; transform: translate(80px, 60px) rotate(355deg) scale(0.3); }
+  100% { opacity: 1; transform: translate(0, 0) rotate(355deg) scale(1); }
+}
+
+.master-hero-animated {
+  animation: masterSectionReveal 0.4s ease-out;
+}
+.master-hero-animated .master__title {
+  opacity: 0;
+  animation: masterTitleDrop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s forwards;
+}
+.master-hero-animated .master__title_h2 {
+  opacity: 0;
+  animation: masterSubtitleSlide 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s forwards;
+}
+.master-hero-animated .master__img {
+  opacity: 0;
+  animation: masterImagePop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s forwards;
+}
+.master-hero-animated .master__button {
+  opacity: 0;
+  animation: masterButtonFade 0.5s ease-out 0.9s forwards;
+}
+.master-hero-animated .master__card:nth-child(1) {
+  opacity: 0;
+  animation: masterCardFly1 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s forwards;
+}
+.master-hero-animated .master__card:nth-child(2) {
+  opacity: 0;
+  animation: masterCardFly2 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s forwards;
+}
+.master-hero-animated .master__card:nth-child(3) {
+  opacity: 0;
+  animation: masterCardFly3 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s forwards;
+}
+.master-hero-animated .master__card:nth-child(4) {
+  opacity: 0;
+  animation: masterCardFly4 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.9s forwards;
 }
 
 .master__section {

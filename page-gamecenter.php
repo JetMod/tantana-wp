@@ -9,7 +9,7 @@
       // Получаем данные ACF для секции Hero
       $game_hero = get_field('game_hero');
       ?>
-      <section class="game">
+      <section class="game game-hero-animated">
         <div class="game__title_container">
           <h1 class="game__title"><?php echo !empty($game_hero['title']) ? $game_hero['title'] : 'игровой'; ?>
 

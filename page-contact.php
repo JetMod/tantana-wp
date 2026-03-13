@@ -7,7 +7,7 @@ get_header();
 ?>
 
 <main class="main">
-      <section class="contact">
+      <section class="contact contact-hero-animated">
         <?php
         // Получаем данные ACF
         $contact = get_field('contact_title');
@@ -43,11 +43,24 @@ get_header();
 			  </ul>
 		  </div>
 
-        <?php if ($contact_social && !empty($contact_social)): ?>
+        <?php
+        $exclude_social = array('telegram', 'tg', 'whatsapp', 'вотсап', 'viber', 'вайбер');
+        $contact_social_filtered = array();
+        if ($contact_social && !empty($contact_social)) {
+          foreach ($contact_social as $social) {
+            $name = mb_strtolower(trim(!empty($social['name']) ? $social['name'] : ''));
+            $skip = false;
+            foreach ($exclude_social as $ex) {
+              if (strpos($name, $ex) !== false) { $skip = true; break; }
+            }
+            if (!$skip) $contact_social_filtered[] = $social;
+          }
+        }
+        if (!empty($contact_social_filtered)): ?>
         <div class="contact__container">
           <h2 class="contact__container_text">соцсети</h2>
           <ul class="contact__ul">
-            <?php foreach ($contact_social as $social): ?>
+            <?php foreach ($contact_social_filtered as $social): ?>
             <li class="contact__li<?php echo !empty($social['border']) && $social['border'] ? ' contact__li_border' : ''; ?>">
               <a
                 href="<?php echo !empty($social['url']) ? $social['url'] : '#'; ?>"

@@ -9,9 +9,16 @@
       // Получаем данные ACF для секции Hero
       $news_hero = get_field('news_hero');
       ?>
-      <section class="news-page">
+      <section class="news-page news-hero-animated">
         <header class="news-page__hero">
-          <h1 class="news-page__title"><?php echo !empty($news_hero['title']) ? esc_html($news_hero['title']) : 'Новости'; ?></h1>
+          <div class="news-page__title_container">
+            <h1 class="news-page__title"><?php echo !empty($news_hero['title']) ? esc_html($news_hero['title']) : 'Новости'; ?>
+              <span style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
+                Новости детского центра «Тантана»
+              </span>
+            </h1>
+            <span class="news-page__title-shadow"><?php echo !empty($news_hero['title']) ? esc_html($news_hero['title']) : 'Новости'; ?> </span>
+          </div>
           <p class="news-page__subtitle"><?php echo !empty($news_hero['subtitle']) ? esc_html($news_hero['subtitle']) : 'Актуальные события и обновления детского центра «Тантана»'; ?></p>
         </header>
         <div class="news-page__grid">

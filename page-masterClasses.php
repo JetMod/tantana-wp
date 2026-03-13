@@ -14,7 +14,7 @@
       $default_hero_image = '/wp-content/uploads/2025/04/burger.png';
       $default_hero_button_text = 'заказать праздник';
       ?>
-      <section class="master__section">
+      <section class="master__section master-hero-animated">
         <h1 class="master__title"><?php echo ($master_hero && !empty($master_hero['title'])) ? $master_hero['title'] : $default_hero_title; ?>
           <span style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
             Кулинарные мастер-классы «Тантана»: пицца, бургеры, лимонад

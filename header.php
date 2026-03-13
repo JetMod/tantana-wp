@@ -39,9 +39,9 @@
           <li><a href="<?php echo site_url('/celebrations'); ?>" class="header__nav-link">Торжества</a></li>
           <li><a href="<?php echo site_url('/camp'); ?>" class="header__nav-link">Tantana Camp</a></li>
           <li><a href="<?php echo site_url('/gamecenter'); ?>" class="header__nav-link">Игровой центр</a></li>
+          <li><a href="<?php echo site_url('/master-classes'); ?>" class="header__nav-link">Мастер-классы</a></li>
           <li><a href="<?php echo site_url('/news'); ?>" class="header__nav-link">Новости</a></li>
           <li><a href="<?php echo site_url('/contact'); ?>" class="header__nav-link">Контакты</a></li>
-          <li><a href="<?php echo site_url('/master-classes'); ?>" class="header__nav-link">Мастер-классы</a></li>
         </ul>
       </nav>
       <div class="header__actions">
@@ -72,9 +72,9 @@
                 <li><a href="<?php echo site_url('/celebrations'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Торжества</a></li>
                 <li><a href="<?php echo site_url('/camp'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Tantana Camp</a></li>
                 <li><a href="<?php echo site_url('/gamecenter'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Игровой центр</a></li>
+                <li><a href="<?php echo site_url('/master-classes'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Мастер-классы</a></li>
                 <li><a href="<?php echo site_url('/news'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Новости</a></li>
                 <li><a href="<?php echo site_url('/contacts'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Контакты</a></li>
-                <li><a href="<?php echo site_url('/master-classes'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Мастер-классы</a></li>
             </ul>
         </nav>
         <div class="sidebar__bottom">
