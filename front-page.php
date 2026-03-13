@@ -4,7 +4,7 @@ get_header();
 
 ?>
 <main class="main">
-    <section class="tantana">
+    <section class="tantana hero-animated">
         <?php
         // Получаем секцию один раз
         $hero_section = get_field('home_hero_section');
@@ -78,7 +78,7 @@ get_header();
         $nav_section = get_field('home_nav_section');
         ?>
         <h2 class="nav__text"><?php echo $nav_section['nav_text'] ?: 'другие развлечения'; ?></h2>
-        <ul class="nav__ul">
+        <ul class="nav__ul"></ul>
             <?php
             
             if ($nav_section && !empty($nav_section['nav_items'])) {

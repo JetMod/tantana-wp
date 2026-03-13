@@ -11,7 +11,7 @@ get_header();
 ?>
 
 <main class="main">
-      <section class="camp">
+      <section class="camp camp-hero-animated">
         <h1 class="camp__title">
           <span aria-hidden="true" class="camp__title_decor">
           <?php

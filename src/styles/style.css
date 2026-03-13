@@ -2716,12 +2716,119 @@ body.sidebar-open {
 }
 
 .tantana__title_h span {
-   transition: 0.3s, transform 0.3s;
-  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  
 }
 
 .tantana__title_h span:hover {
   transform: scale(1.03);
+}
+
+/* Подсветка букв при наведении — цвет свечения совпадает с буквой */
+.tantana__title_h span.blue:hover { filter: drop-shadow(0 0 20px rgba(85, 52, 245, 0.8)); }
+.tantana__title_h span.orange:hover,
+.tantana__title_h span.orange1:hover { filter: drop-shadow(0 0 20px rgba(242, 165, 49, 0.8)); }
+.tantana__title_h span.green:hover,
+.tantana__title_h span.green1:hover { filter: drop-shadow(0 0 20px rgba(0, 180, 135, 0.8)); }
+.tantana__title_h span.yellow:hover { filter: drop-shadow(0 0 20px rgba(255, 197, 72, 0.8)); }
+.tantana__title_h span.red:hover { filter: drop-shadow(0 0 20px rgba(195, 40, 36, 0.8)); }
+
+/* ===== Hero animations ===== */
+/* 1) Появление — буквы fade-in */
+@keyframes heroLettersFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* 2) Бесконечная волна — плавное свечение по кругу (цвет задаётся per-letter) */
+@keyframes heroLettersPulseBlue {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(85, 52, 245, 0.4)); }
+  50% { filter: drop-shadow(0 0 28px rgba(85, 52, 245, 0.7)); }
+}
+@keyframes heroLettersPulseOrange {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(242, 165, 49, 0.4)); }
+  50% { filter: drop-shadow(0 0 28px rgba(242, 165, 49, 0.7)); }
+}
+@keyframes heroLettersPulseGreen {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(0, 180, 135, 0.4)); }
+  50% { filter: drop-shadow(0 0 28px rgba(0, 180, 135, 0.7)); }
+}
+@keyframes heroLettersPulseYellow {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(255, 197, 72, 0.4)); }
+  50% { filter: drop-shadow(0 0 28px rgba(255, 197, 72, 0.7)); }
+}
+@keyframes heroLettersPulseRed {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(195, 40, 36, 0.4)); }
+  50% { filter: drop-shadow(0 0 28px rgba(195, 40, 36, 0.7)); }
+}
+
+@keyframes heroTitleFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes heroButtonFade {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes heroSectionReveal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.hero-animated.tantana {
+  animation: heroSectionReveal 0.6s ease-out;
+}
+
+.hero-animated .tantana__title {
+  animation: heroTitleFade 0.6s ease-out 0.15s forwards;
+  opacity: 0;
+}
+
+.hero-animated .tantana__title_h span {
+  opacity: 0;
+}
+
+/* Появление + бесконечная волна свечения (каждая буква с задержкой для эффекта волны) */
+.hero-animated .tantana__title_h span.blue {
+  animation: heroLettersFadeIn 0.7s ease-out 0.35s forwards,
+             heroLettersPulseBlue 2.8s ease-in-out 1.2s infinite;
+}
+.hero-animated .tantana__title_h span.orange {
+  animation: heroLettersFadeIn 0.7s ease-out 0.45s forwards,
+             heroLettersPulseOrange 2.8s ease-in-out 1.6s infinite;
+}
+.hero-animated .tantana__title_h span.green1 {
+  animation: heroLettersFadeIn 0.7s ease-out 0.55s forwards,
+             heroLettersPulseGreen 2.8s ease-in-out 2s infinite;
+}
+.hero-animated .tantana__title_h span.yellow {
+  animation: heroLettersFadeIn 0.7s ease-out 0.65s forwards,
+             heroLettersPulseYellow 2.8s ease-in-out 2.4s infinite;
+}
+.hero-animated .tantana__title_h span.red {
+  animation: heroLettersFadeIn 0.7s ease-out 0.75s forwards,
+             heroLettersPulseRed 2.8s ease-in-out 2.8s infinite;
+}
+.hero-animated .tantana__title_h span.green {
+  animation: heroLettersFadeIn 0.7s ease-out 0.85s forwards,
+             heroLettersPulseGreen 2.8s ease-in-out 3.2s infinite;
+}
+.hero-animated .tantana__title_h span.orange1 {
+  animation: heroLettersFadeIn 0.7s ease-out 0.95s forwards,
+             heroLettersPulseOrange 2.8s ease-in-out 3.6s infinite;
+}
+
+.hero-animated .tantana__button {
+  animation: heroButtonFade 0.6s ease-out 1.5s forwards;
+  opacity: 0;
 }
 
 
@@ -5330,6 +5437,148 @@ height: 0;
 .camp__title span {
   -webkit-text-stroke: 2px black;
 }
+
+/* ===== Camp hero animations ===== */
+@keyframes campSectionReveal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+/* Летящие буквы — каждая с своей траектории */
+@keyframes campFlyTopLeft {
+  0% { opacity: 0; transform: translate(-120px, -100px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes campFlyTop {
+  0% { opacity: 0; transform: translate(0, -120px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes campFlyTopRight {
+  0% { opacity: 0; transform: translate(120px, -100px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes campFlyRight {
+  0% { opacity: 0; transform: translate(150px, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes campFlyBottomRight {
+  0% { opacity: 0; transform: translate(120px, 100px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes campFlyBottom {
+  0% { opacity: 0; transform: translate(0, 120px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes campFlyBottomLeft {
+  0% { opacity: 0; transform: translate(-120px, 100px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes campFlyLeft {
+  0% { opacity: 0; transform: translate(-150px, 0); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes campLetterPulseBlue {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(85, 52, 245, 0.5)); }
+  50% { filter: drop-shadow(0 0 22px rgba(85, 52, 245, 0.8)); }
+}
+@keyframes campLetterPulseOrange {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(242, 165, 49, 0.5)); }
+  50% { filter: drop-shadow(0 0 22px rgba(242, 165, 49, 0.8)); }
+}
+@keyframes campLetterPulseGreen {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 180, 135, 0.5)); }
+  50% { filter: drop-shadow(0 0 22px rgba(0, 180, 135, 0.8)); }
+}
+@keyframes campLetterPulseYellow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 197, 72, 0.5)); }
+  50% { filter: drop-shadow(0 0 22px rgba(255, 197, 72, 0.8)); }
+}
+@keyframes campLetterPulseRed {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(195, 40, 36, 0.5)); }
+  50% { filter: drop-shadow(0 0 22px rgba(195, 40, 36, 0.8)); }
+}
+@keyframes campContentFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes campImageScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.camp-hero-animated {
+  animation: campSectionReveal 0.5s ease-out;
+}
+/* Сбрасываем transform из .blue/.orange и др. — анимация сама управляет позицией */
+.camp-hero-animated .camp__title_decor span {
+  opacity: 0;
+  transform: none !important;
+}
+.camp-hero-animated,
+.camp-hero-animated .camp__title {
+  overflow: visible;
+}
+.camp-hero-animated .camp__title {
+  overflow: visible;
+}
+/* Летящие буквы — по цвету (работает и с ACF, и с дефолтом) */
+.camp-hero-animated .camp__title_decor span.blue {
+  animation: campFlyTopLeft 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards,
+             campLetterPulseBlue 3s ease-in-out 1.5s infinite;
+}
+.camp-hero-animated .camp__title_decor span.orange {
+  animation: campFlyTop 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards,
+             campLetterPulseOrange 3s ease-in-out 1.8s infinite;
+}
+.camp-hero-animated .camp__title_decor span.green {
+  animation: campFlyTopRight 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards,
+             campLetterPulseGreen 3s ease-in-out 2.1s infinite;
+}
+.camp-hero-animated .camp__title_decor span.yellow {
+  animation: campFlyRight 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s forwards,
+             campLetterPulseYellow 3s ease-in-out 2.4s infinite;
+}
+.camp-hero-animated .camp__title_decor span.red {
+  animation: campFlyBottomRight 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s forwards,
+             campLetterPulseRed 3s ease-in-out 2.7s infinite;
+}
+.camp-hero-animated .camp__title_decor span.camp__title_margin {
+  animation: campFlyLeft 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s forwards,
+             campLetterPulseOrange 3s ease-in-out 3.6s infinite;
+}
+.camp-hero-animated .camp__container_center {
+  opacity: 0;
+  animation: campContentFadeIn 0.7s ease-out 1.4s forwards;
+}
+.camp-hero-animated .camp__img {
+  opacity: 0;
+  animation: campImageScale 0.8s ease-out 1.5s forwards;
+}
+.camp-hero-animated .camp__container_one {
+  opacity: 0;
+  animation: campContentFadeIn 0.6s ease-out 1.5s forwards;
+}
+.camp-hero-animated .camp__container_text {
+  opacity: 0;
+  animation: campContentFadeIn 0.5s ease-out 1.6s forwards;
+}
+.camp-hero-animated .camp__button,
+.camp-hero-animated .camp__butto {
+  opacity: 0;
+  animation: campContentFadeIn 0.5s ease-out 1.75s forwards;
+}
+
 .camp__container {
   display: flex;
   justify-content: space-between;
