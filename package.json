@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@stylistic/stylelint-config": "^2.0.0",
+    "@stylistic/stylelint-plugin": "^3.0.0",
+    "stylelint": "^16.18.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.4.1"
+  },
+  "dependencies": {
+    "csscomb": "^4.3.0",
+    "prettier": "^3.5.3"
+  }
+}
