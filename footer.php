@@ -25,7 +25,7 @@
             </svg>
         </div>
         <h3 class="success-popup__title">Ваша заявка принята!</h3>
-        <p class="success-popup__text">Мы свяжемся с вами в ближайшее время и поможем организовать праздник.</p>
+        <p class="success-popup__text">Мы свяжемся с вами в ближайшее время для уточнения деталей.</p>
         <button type="button" class="success-popup__close">Отлично</button>
     </div>
 </div>
@@ -236,14 +236,22 @@ openButtons.forEach((btn) => {
       const successOverlay = successPopup.querySelector('.success-popup__overlay');
       const successCloseBtn = successPopup.querySelector('.success-popup__close');
 
+      let successPopupTimer = null;
+
       function openSuccessPopup() {
         popup.classList.remove('popup_active');
         successPopup.classList.add('success-popup_active');
         successPopup.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        if (successPopupTimer) clearTimeout(successPopupTimer);
+        successPopupTimer = setTimeout(closeSuccessPopup, 3000);
       }
 
       function closeSuccessPopup() {
+        if (successPopupTimer) {
+          clearTimeout(successPopupTimer);
+          successPopupTimer = null;
+        }
         successPopup.classList.remove('success-popup_active');
         successPopup.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
