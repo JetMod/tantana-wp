@@ -9,16 +9,12 @@
       // Получаем данные ACF для секции Hero
       $news_hero = get_field('news_hero');
       ?>
-      <section class="new">
-        <div class="contact__title_container new__title">
-          <h1 class="contact__title"><?php echo !empty($news_hero['title']) ? $news_hero['title'] : 'НОВОСТИ'; ?>
-            <span style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
-              Новости детского центра «Тантана» и обновления мероприятий
-            </span>
-          </h1>
-          <span class="contact__title-shadow"><?php echo !empty($news_hero['title']) ? $news_hero['title'] : 'НОВОСТИ'; ?> </span>
-        </div>
-        <div class="new__cards">
+      <section class="news-page">
+        <header class="news-page__hero">
+          <h1 class="news-page__title"><?php echo !empty($news_hero['title']) ? esc_html($news_hero['title']) : 'Новости'; ?></h1>
+          <p class="news-page__subtitle"><?php echo !empty($news_hero['subtitle']) ? esc_html($news_hero['subtitle']) : 'Актуальные события и обновления детского центра «Тантана»'; ?></p>
+        </header>
+        <div class="news-page__grid">
           <?php
             $news_order = get_field('module_news_order', 'option') ?: 'date';
             // Определяем параметры запроса
@@ -41,104 +37,49 @@
             $news_query = new WP_Query($args);
             // Если новости не найдены, показываем демо-новости
             if (!$news_query->have_posts()) {
-              ?>
-               <a href="<?php echo site_url('/newsBlog'); ?>" class="new__card-link">
-                <div class="new__card">
-                  <img src="/wp-content/uploads/2025/04/new1.png" alt="Летние развлечения в детском центре развития и развлечения TANTANA" class="new__img" />
-                  <h2 class="new__text">
-                    Летние развлечения в детском центре развития и развлечения TANTANA
-                  </h2>
+              $demo_items = array(
+                array('img' => '/wp-content/uploads/2025/04/new1.png', 'title' => 'Летние развлечения в детском центре TANTANA', 'url' => site_url('/newsBlog'), 'date' => date('d.m.Y')),
+                array('img' => '/wp-content/uploads/2025/04/new2.png', 'title' => 'Новый мастер-класс по готовке', 'url' => site_url('/newsBlog'), 'date' => date('d.m.Y')),
+                array('img' => '/wp-content/uploads/2025/04/new3.png', 'title' => 'Детский центр представляет новые развивающие программы', 'url' => site_url('/newsBlog'), 'date' => date('d.m.Y')),
+                array('img' => '/wp-content/uploads/2025/04/new4.png', 'title' => 'Как сделать лето незабываемым', 'url' => site_url('/newsBlog'), 'date' => date('d.m.Y')),
+                array('img' => '/wp-content/uploads/2025/04/new5.png', 'title' => 'Творческие мастер-классы: поделки вместе', 'url' => site_url('/newsBlog'), 'date' => date('d.m.Y')),
+                array('img' => '/wp-content/uploads/2025/04/new6.png', 'title' => 'Развивайся с удовольствием: мир ярких открытий', 'url' => site_url('/newsBlog'), 'date' => date('d.m.Y')),
+              );
+              foreach ($demo_items as $item): ?>
+              <a href="<?php echo esc_url($item['url']); ?>" class="news-card">
+                <div class="news-card__image-wrap">
+                  <img src="<?php echo esc_url($item['img']); ?>" alt="<?php echo esc_attr($item['title']); ?>" class="news-card__img" />
+                  <span class="news-card__date"><?php echo esc_html($item['date']); ?></span>
+                </div>
+                <div class="news-card__content">
+                  <h2 class="news-card__title"><?php echo esc_html($item['title']); ?></h2>
                 </div>
               </a>
-              <a href="<?php echo site_url('/newsBlog'); ?>" class="new__card-link">
-                <div class="new__card new__none new__none_d2">
-                </div>
-              </a>
-              <a href="<?php echo site_url('/newsBlog'); ?>" class="new__card-link">
-                <div class="new__card">
-                  <img src="/wp-content/uploads/2025/04/new2.png" alt="Новый мастер-класс по готовке" class="new__img" />
-                  <h2 class="new__text">Новый мастер-класс по готовке</h2>
-                </div>
-              </a>
-              <a href="<?php echo site_url('/newsBlog'); ?>" class="new__card-link">
-                <div class="new__card">
-                  <img src="/wp-content/uploads/2025/04/new3.png" alt="Детский центр представляет новые развивающие программы" class="new__img" />
-                  <h2 class="new__text">
-                    детский центр представляет новые развивающие программы
-                  </h2>
-                </div>
-              </a>
-              <a href="<?php echo site_url('/newsBlog'); ?>" class="new__card-link">
-                <div class="new__card new__none new__none_d">
-                </div>
-              </a>
-              <a href="<?php echo site_url('/newsBlog'); ?>" class="new__card-link">
-                <div class="new__card new__none new__none_d2">
-                </div>
-              </a>
-              <a href="<?php echo site_url('/newsBlog'); ?>" class="new__card-link">
-                <div class="new__card">
-                  <img src="/wp-content/uploads/2025/04/new4.png" alt="Как сделать лето незабываемым: летние каникулы с пользой" class="new__img" />
-                  <h2 class="new__text">
-                    Как сделать лето незабываемым: летние каникулы с пользой
-                  </h2>
-                </div>
-              </a>
-              <a href="<?php echo site_url('/newsBlog'); ?>" class="new__card-link">
-                <div class="new__card new__none new__none_d">
-                </div>
-              </a>
-              <a href="<?php echo site_url('/newsBlog'); ?>" class="new__card-link">
-                <div class="new__card">
-                  <img src="/wp-content/uploads/2025/04/new5.png" alt="Творческие мастер-классы: учимся делать поделки вместе" class="new__img" />
-                  <h2 class="new__text">
-                    Творческие мастер-классы: учимся делать поделки вместе
-                  </h2>
-                </div>
-              </a>
-              <a href="<?php echo site_url('/newsBlog'); ?>" class="new__card-link">
-                <div class="new__card">
-                  <img src="/wp-content/uploads/2025/04/new6.png" alt="Развивайся с удовольствием: мир ярких открытий" class="new__img" />
-                  <h2 class="new__text">
-                    Развивайся с удовольствием: мир ярких открытий
-                  </h2>
-                </div>
-              </a>
-            <?php
+            <?php endforeach;
           } else {
-            // Выводим новости из базы данных
             while ($news_query->have_posts()) {
               $news_query->the_post();
-                    
-              $news_short_description = has_excerpt() ? get_the_excerpt() : wp_trim_words(get_the_content(), 20, '...');
               $news_title = get_the_title();
+              $news_excerpt = has_excerpt() ? get_the_excerpt() : wp_trim_words(get_the_content(), 18, '...');
+              $news_date = get_the_date('d.m.Y');
               $post_thumbnail_id = get_post_thumbnail_id();
-              $post_thumbnail = '';
-              $news_image = null;
-              
-              if ($post_thumbnail_id) {
-                  $post_thumbnail_url = wp_get_attachment_image_url($post_thumbnail_id, 'medium');
-                  $news_image = esc_url($post_thumbnail_url);
-              }
-              
-              $news_button = $news_button_text;
-              
-              // Если изображение не задано, используем стандартное
-              if (!$news_image) {
-                  $news_image = '/wp-content/uploads/2025/04/new1.png';
-              }
+              $news_image = $post_thumbnail_id ? wp_get_attachment_image_url($post_thumbnail_id, 'medium') : null;
+              if (!$news_image) $news_image = '/wp-content/uploads/2025/04/new1.png';
               ?>
-               <a href="<?php the_permalink(); ?>" class="new__card-link">
-                <div class="new__card">
-                  <img src="<?php echo $news_image; ?>" alt="<?php echo $news_title ?: 'Новость центра «Тантана»'; ?>" class="new__img" />
-                  <h2 class="new__text">
-                    <?php echo $news_short_description; ?>
-                  </h2>
+              <a href="<?php the_permalink(); ?>" class="news-card">
+                <div class="news-card__image-wrap">
+                  <img src="<?php echo esc_url($news_image); ?>" alt="<?php echo esc_attr($news_title ?: 'Новость'); ?>" class="news-card__img" />
+                  <span class="news-card__date"><?php echo esc_html($news_date); ?></span>
+                </div>
+                <div class="news-card__content">
+                  <h2 class="news-card__title"><?php echo esc_html($news_title); ?></h2>
+                  <p class="news-card__excerpt"><?php echo esc_html($news_excerpt); ?></p>
                 </div>
               </a>
               <?php
             }
           }
+          wp_reset_postdata();
           ?>
         </div>
       </section>
