@@ -579,8 +579,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   background: transparent;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -589,22 +589,22 @@ a {
   opacity: 0.85;
 }
 .header__social-img {
-  width: 38px;
-  height: 38px;
+  width: 46px;
+  height: 46px;
   object-fit: contain;
 }
 .header__cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 22px;
-  height: 44px;
+  padding: 0 32px;
+  height: 52px;
   font-family: "Inter", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: #fff;
   background: #1a1a1a;
-  border-radius: 22px;
+  border-radius: 26px;
   white-space: nowrap;
   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -615,9 +615,17 @@ a {
 }
 @media screen and (max-width: 1024px) {
   .header__cta {
-    padding: 0 18px;
-    height: 40px;
-    font-size: 16px;
+    padding: 0 24px;
+    height: 48px;
+    font-size: 18px;
+  }
+  .header__social {
+    width: 48px;
+    height: 48px;
+  }
+  .header__social-img {
+    width: 42px;
+    height: 42px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -709,8 +717,27 @@ body.sidebar-open {
 
 .sidebar__top {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 32px;
+}
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.sidebar__logo-img {
+  display: block;
+  height: 40px;
+  max-width: 150px;
+  width: auto;
+  object-fit: contain;
+}
+@media screen and (max-width: 480px) {
+  .sidebar__logo-img {
+    height: 40px;
+    max-width: 150px;
+  }
 }
 .sidebar__close {
   display: flex;
@@ -2210,6 +2237,12 @@ body.sidebar-open {
   display: flex;
   background: #C32824;
   color: #F6F6F6;
+}
+.footer a {
+  color: #fff;
+}
+.footer a:hover {
+  color: rgba(255, 255, 255, 0.9);
 }
 @media screen and (max-width: 1793px) {
   .footer {
@@ -6121,6 +6154,10 @@ transition: 0.3s, transform 0.3s;
   align-content: center;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 767px) {
+    min-height: 100px;
+  }
 }
 .news-page__title {
   font-family: "RAYDIS", sans-serif;

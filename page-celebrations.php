@@ -594,12 +594,7 @@
                   <p class="partners__feature">• Восточные лакомства</p>
                   <p class="partners__feature">• Свежая выпечка</p>
                 </div>
-                <a href="#" target="_blank" class="partners__card_link">
-                  <span>Перейти на сайт</span>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3.33334 12.6667L12.6667 3.33337M12.6667 3.33337H6.00001M12.6667 3.33337V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
+               
               </div> 
             </div>
           </div>

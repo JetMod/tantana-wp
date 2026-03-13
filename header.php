@@ -30,7 +30,7 @@
       </button>
       <a href="<?php echo site_url(); ?>" class="header__logo-link">
         <picture>
-          <source srcset="/wp-content/uploads/2025/04/logo_360.png" media="(max-width: 767px)">
+          <source srcset="/wp-content/uploads/2026/02/2026-02-19-23.54.23-2-e1771536229845.png" media="(max-width: 767px)">
           <img src="/wp-content/uploads/2026/02/2026-02-19-23.54.23-2-e1771536229845.png" alt="Логотип Tantana" class="header__logo" />
         </picture>
       </a>
@@ -61,6 +61,9 @@
     <div class="sidebar__overlay" onclick="sidebarClose()" aria-hidden="true"></div>
     <div class="sidebar__inner">
         <div class="sidebar__top">
+            <a href="<?php echo site_url(); ?>" class="sidebar__logo" onclick="sidebarClose()">
+              <img src="/wp-content/uploads/2026/02/2026-02-19-23.54.23-2-e1771536229845.png" alt="Логотип Tantana" class="sidebar__logo-img" />
+            </a>
             <button class="sidebar__close" onclick="sidebarClose()" aria-label="Закрыть меню">
                 <span class="sidebar__close-line"></span>
                 <span class="sidebar__close-line"></span>
