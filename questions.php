@@ -1,6 +1,6 @@
 <section class="questions">
         <div class="questions__container">
-            <h4 class="questions__title"><?php echo get_field('module_questions_title', 'option') ?: 'часто задаваемые вопросы'; ?></h4>
+            <h2 class="questions__title"><?php echo get_field('module_questions_title', 'option') ?: 'часто задаваемые вопросы'; ?></h2>
 
             <ul class="questions__text">
                 <?php

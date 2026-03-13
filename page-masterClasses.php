@@ -15,11 +15,16 @@
       $default_hero_button_text = 'заказать праздник';
       ?>
       <section class="master__section">
-        <h1 class="master__title"><?php echo ($master_hero && !empty($master_hero['title'])) ? $master_hero['title'] : $default_hero_title; ?></h1>
+        <h1 class="master__title"><?php echo ($master_hero && !empty($master_hero['title'])) ? $master_hero['title'] : $default_hero_title; ?>
+          <span style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
+            Кулинарные мастер-классы «Тантана»: пицца, бургеры, лимонад
+          </span>
+        </h1>
         <h2 class="master__title_h2">
           мастер <span class="master__title_span"><?php echo ($master_hero && !empty($master_hero['subtitle'])) ? $master_hero['subtitle'] : $default_hero_subtitle; ?></span>
         </h2>
-        <img src="<?php echo ($master_hero && !empty($master_hero['image'])) ? $master_hero['image'] : $default_hero_image; ?>" alt="" class="master__img" />
+        <?php $master_hero_alt = ($master_hero && !empty($master_hero['image_alt'])) ? $master_hero['image_alt'] : 'Кулинарные мастер-классы «Тантана»'; ?>
+        <img src="<?php echo ($master_hero && !empty($master_hero['image'])) ? $master_hero['image'] : $default_hero_image; ?>" alt="<?php echo $master_hero_alt; ?>" class="master__img" />
         <a class="cert__button master__button open-popup"><?php echo ($master_hero && !empty($master_hero['button_text'])) ? $master_hero['button_text'] : $default_hero_button_text; ?></a>
         <div>
           <?php if ($master_hero && !empty($master_hero['cards'])): ?>
@@ -119,15 +124,16 @@
       $default_gallery_mobile_title = 'галерея';
       ?>
       <section class="mastergallery">
-        <h4 class="mastergallery__title"><?php echo ($master_gallery && !empty($master_gallery['title'])) ? $master_gallery['title'] : $default_gallery_title; ?></h4>
+        <h2 class="mastergallery__title"><?php echo ($master_gallery && !empty($master_gallery['title'])) ? $master_gallery['title'] : $default_gallery_title; ?></h2>
         <div>
           <?php if ($master_gallery && !empty($master_gallery['items'])): ?>
             <?php foreach ($master_gallery['items'] as $item): ?>
+              <?php $gallery_alt = !empty($item['alt']) ? $item['alt'] : 'Галерея мастер-классов «Тантана»'; ?>
               <div class="mastergallery__card">
                 <div class="mastergallery__circle<?php echo !empty($item['color']) && $item['color'] != 'default' ? ' mastergallery__' . $item['color'] : ''; ?>"></div>
                 <img
                   src="<?php echo !empty($item['image']) ? $item['image'] : '/wp-content/uploads/2025/04/mastergallery1.png'; ?>"
-                  alt=""
+                  alt="<?php echo $gallery_alt; ?>"
                   class="mastergallery__img"
                 />
               </div>
@@ -135,23 +141,23 @@
           <?php else: ?>
             <div class="mastergallery__card">
               <div class="mastergallery__circle"></div>
-              <img src="/wp-content/uploads/2025/04/mastergallery1.png" alt="" class="mastergallery__img" />
+              <img src="/wp-content/uploads/2025/04/mastergallery1.png" alt="Галерея мастер-классов «Тантана»" class="mastergallery__img" />
             </div>
             <div class="mastergallery__card">
               <div class="mastergallery__circle mastergallery__orange"></div>
-              <img src="/wp-content/uploads/2025/04/mastergallery.png" alt="" class="mastergallery__img" />
+              <img src="/wp-content/uploads/2025/04/mastergallery.png" alt="Галерея мастер-классов «Тантана»" class="mastergallery__img" />
             </div>
             <div class="mastergallery__card">
               <div class="mastergallery__circle mastergallery__blue"></div>
-              <img src="/wp-content/uploads/2025/04/mastergallery.png" alt="" class="mastergallery__img" />
+              <img src="/wp-content/uploads/2025/04/mastergallery.png" alt="Галерея мастер-классов «Тантана»" class="mastergallery__img" />
             </div>
             <div class="mastergallery__card">
               <div class="mastergallery__circle mastergallery__blue"></div>
-              <img src="/wp-content/uploads/2025/04/mastergallery3.png" alt="" class="mastergallery__img" />
+              <img src="/wp-content/uploads/2025/04/mastergallery3.png" alt="Галерея мастер-классов «Тантана»" class="mastergallery__img" />
             </div>
             <div class="mastergallery__card">
               <div class="mastergallery__circle"></div>
-              <img src="/wp-content/uploads/2025/04/mastergallery4.png" alt="" class="mastergallery__img" />
+              <img src="/wp-content/uploads/2025/04/mastergallery4.png" alt="Галерея мастер-классов «Тантана»" class="mastergallery__img" />
             </div>
           <?php endif; ?>
         </div>
@@ -167,35 +173,35 @@
               <li class="gamegallery__card">
                 <img
                   src="<?php echo !empty($image['image']) ? $image['image'] : '/wp-content/uploads/2025/04/1camp-369.png'; ?>"
-                  alt=""
+                  alt="<?php echo !empty($image['alt']) ? $image['alt'] : 'Галерея мастер-классов «Тантана»'; ?>"
                   class="gamegallery__img"
                 />
               </li>
             <?php endforeach; ?>
           <?php else: ?>
             <li class="gamegallery__card">
-              <img src="/wp-content/uploads/2025/04/1camp-369.png" alt="" class="gamegallery__img" />
+              <img src="/wp-content/uploads/2025/04/1camp-369.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
             </li>
             <li class="gamegallery__card">
-              <img src="/wp-content/uploads/2025/04/2camp.png" alt="" class="gamegallery__img" />
+              <img src="/wp-content/uploads/2025/04/2camp.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
             </li>
             <li class="gamegallery__card">
-              <img src="/wp-content/uploads/2025/04/3camp.png" alt="" class="gamegallery__img" />
+              <img src="/wp-content/uploads/2025/04/3camp.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
             </li>
             <li class="gamegallery__card">
-              <img src="/wp-content/uploads/2025/04/4camp.png" alt="" class="gamegallery__img" />
+              <img src="/wp-content/uploads/2025/04/4camp.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
             </li>
             <li class="gamegallery__card">
-              <img src="/wp-content/uploads/2025/04/5camp.png" alt="" class="gamegallery__img" />
+              <img src="/wp-content/uploads/2025/04/5camp.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
             </li>
             <li class="gamegallery__card">
-              <img src="/wp-content/uploads/2025/04/3camp.png" alt="" class="gamegallery__img" />
+              <img src="/wp-content/uploads/2025/04/3camp.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
             </li>
             <li class="gamegallery__card">
-              <img src="/wp-content/uploads/2025/04/1camp-369.png" alt="" class="gamegallery__img" />
+              <img src="/wp-content/uploads/2025/04/1camp-369.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
             </li>
             <li class="gamegallery__card">
-              <img src="/wp-content/uploads/2025/04/2game.png" alt="" class="gamegallery__img" />
+              <img src="/wp-content/uploads/2025/04/2game.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
             </li>
           <?php endif; ?>
         </ul>
@@ -205,28 +211,28 @@
         <h2 class="gamegallery__title">галерея</h2>
         <ul class="gamegallery__cards">
           <li class="gamegallery__card">
-            <img src="/wp-content/uploads/2025/04/1camp-369.png" alt="" class="gamegallery__img" />
+            <img src="/wp-content/uploads/2025/04/1camp-369.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
           </li>
           <li class="gamegallery__card">
-            <img src="/wp-content/uploads/2025/04/2camp.png" alt="" class="gamegallery__img" />
+            <img src="/wp-content/uploads/2025/04/2camp.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
           </li>
           <li class="gamegallery__card">
-            <img src="/wp-content/uploads/2025/04/3camp.png" alt="" class="gamegallery__img" />
+            <img src="/wp-content/uploads/2025/04/3camp.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
           </li>
           <li class="gamegallery__card">
-            <img src="/wp-content/uploads/2025/04/4camp.png" alt="" class="gamegallery__img" />
+            <img src="/wp-content/uploads/2025/04/4camp.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
           </li>
           <li class="gamegallery__card">
-            <img src="/wp-content/uploads/2025/04/5camp.png" alt="" class="gamegallery__img" />
+            <img src="/wp-content/uploads/2025/04/5camp.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
           </li>
           <li class="gamegallery__card">
-            <img src="/wp-content/uploads/2025/04/3camp.png" alt="" class="gamegallery__img" />
+            <img src="/wp-content/uploads/2025/04/3camp.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
           </li>
           <li class="gamegallery__card">
-            <img src="/wp-content/uploads/2025/04/1camp-369.png" alt="" class="gamegallery__img" />
+            <img src="/wp-content/uploads/2025/04/1camp-369.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
           </li>
           <li class="gamegallery__card">
-            <img src="/wp-content/uploads/2025/04/2game.png" alt="" class="gamegallery__img" />
+            <img src="/wp-content/uploads/2025/04/2game.png" alt="Галерея мастер-классов «Тантана»" class="gamegallery__img" />
           </li>
         </ul>
       </section>
@@ -245,9 +251,9 @@
       <section class="masters" id="masters">
         <div>
           <div class="masters__container">
-            <h4 class="questions__title masters__title">
+            <h2 class="questions__title masters__title">
               <?php echo ($master_price && !empty($master_price['title'])) ? $master_price['title'] : $default_price_title; ?>
-            </h4>
+            </h2>
             <div class="masters__container_price">
               <p class="masters__price">
                 <?php echo ($master_price && !empty($master_price['description'])) ? $master_price['description'] : $default_price_description; ?>
@@ -359,15 +365,16 @@
       ?>
       <section class="creative">
         <div class="creative__container">
-          <h4 class="creative__title"><?php echo ($master_creative && !empty($master_creative['title'])) ? $master_creative['title'] : $default_creative_title; ?></h4>
+          <h2 class="creative__title"><?php echo ($master_creative && !empty($master_creative['title'])) ? $master_creative['title'] : $default_creative_title; ?></h2>
 
           <div class="creative__slider">
-            <img src="<?php echo ($master_creative && !empty($master_creative['image'])) ? $master_creative['image'] : $default_creative_image; ?>" alt="" />
+            <?php $creative_alt = ($master_creative && !empty($master_creative['image_alt'])) ? $master_creative['image_alt'] : 'Творческие мастер-классы «Тантана»'; ?>
+            <img src="<?php echo ($master_creative && !empty($master_creative['image'])) ? $master_creative['image'] : $default_creative_image; ?>" alt="<?php echo $creative_alt; ?>" />
           </div>
 
-          <h4 class="creative__text">
+          <h3 class="creative__text">
             <?php echo ($master_creative && !empty($master_creative['text'])) ? $master_creative['text'] : $default_creative_text; ?>
-          </h4>
+          </h3>
           <p class="creative__text_p">
             <?php echo ($master_creative && !empty($master_creative['text2'])) ? $master_creative['text2'] : $default_creative_text2; ?>
           </p>
@@ -377,7 +384,7 @@
         </div>
         <img
           src="<?php echo $default_creative_bg; ?>"
-          alt=""
+          alt="Фон блока творческих мастер-классов"
           class="creative__img"
         />
       </section>

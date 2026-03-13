@@ -1,5 +1,5 @@
 <section class="reviews__section">
-        <h4 class="reviews__title"><?php echo get_field('module_reviews_title', 'option') ?: 'Отзывы'; ?></h4>
+        <h2 class="reviews__title"><?php echo get_field('module_reviews_title', 'option') ?: 'Отзывы'; ?></h2>
         <div class="reviews__container">
             <?php
             // Получаем настройки модуля отзывов
@@ -78,7 +78,7 @@
                     <div class="reviews__card<?php echo $card_class; ?>">
                         <img
                                 src="<?php echo $review['icon']; ?>"
-                                alt=""
+                                alt="Иконка отзыва"
                                 class="reviews__icon<?php echo $icon_class; ?>"
                         />
                         <p class="reviews__text<?php echo $text_class; ?>">
@@ -87,7 +87,7 @@
                         <div class="reviews__card_container">
                             <img
                                     src="<?php echo $review['avatar']; ?>"
-                                    alt=""
+                                    alt="Автор отзыва: <?php echo $review['author']; ?>"
                                     class="reviews__avatar"
                             />
                             <p class="reviews__name<?php echo $name_class; ?>"><?php echo $review['author']; ?></p>
@@ -137,7 +137,7 @@
                     <div class="reviews__card<?php echo $card_class; ?>">
                         <img
                                 src="<?php echo $review_icon; ?>"
-                                alt=""
+                                alt="Иконка отзыва"
                                 class="reviews__icon<?php echo $icon_class; ?>"
                         />
                         <p class="reviews__text<?php echo $text_class; ?>">
@@ -146,7 +146,7 @@
                         <div class="reviews__card_container">
                             <img
                                     src="<?php echo $review_avatar; ?>"
-                                    alt=""
+                                    alt="Автор отзыва: <?php echo $review_author ?: 'Гость'; ?>"
                                     class="reviews__avatar"
                             />
                             <p class="reviews__name<?php echo $name_class; ?>"><?php echo $review_author; ?></p>

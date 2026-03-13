@@ -1,5 +1,5 @@
 <section class="activities__section">
-        <h4 class="activities__title"><?php echo get_field('module_activities_title', 'option') ?: 'Другие развлечения'; ?></h4>
+        <h2 class="activities__title"><?php echo get_field('module_activities_title', 'option') ?: 'Другие развлечения'; ?></h2>
         <div class="activities__container">
           <?php
           // Получаем список развлечений из ACF
@@ -13,7 +13,7 @@
                   array(
                       'activity_title' => 'Мастер-классы',
                       'activity_image' => '/wp-content/uploads/2025/04/activities1.webp',
-                      'activity_link' => site_url('/masterClasses'),
+                      'activity_link' => site_url('/master-classes'),
                       'activity_position' => 'top_left'
                   ),
                   array(
@@ -123,7 +123,7 @@
             ?>
             <img
               src="<?php echo $blue_cube['decorative_image']; ?>"
-              alt=""
+              alt="Декоративный куб"
               class="activities__img <?php echo $blue_cube['decorative_class']; ?>"
             />
             <?php endif; ?>
@@ -143,7 +143,7 @@
               ?>
               <img
                 src="<?php echo $red_cube['decorative_image']; ?>"
-                alt=""
+              alt="Декоративный куб"
                 class="activities__img <?php echo $red_cube['decorative_class']; ?>"
               />
               <?php endif; ?>
@@ -222,7 +222,7 @@
           ?>
           <img
             src="<?php echo $orange_cube['decorative_image']; ?>"
-            alt=""
+            alt="Декоративный куб"
             class="activities__img <?php echo $orange_cube['decorative_class']; ?>"
           />
           <?php endif; ?>

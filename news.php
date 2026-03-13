@@ -1,6 +1,6 @@
 <section class="news">
         <div class="news__container">
-            <h4 class="news__title"><?php echo get_field('module_news_title', 'option') ?: 'Новости'; ?></h4>
+            <h2 class="news__title"><?php echo get_field('module_news_title', 'option') ?: 'Новости'; ?></h2>
             <a href="<?php echo site_url('/news'); ?>" class="news__all"><?php echo get_field('module_news_all_link_text', 'option') ?: 'Все новости'; ?></a>
         </div>
 

@@ -8,30 +8,31 @@
       <?php
       // Получаем данные ACF для секции Hero
       $newsblog_hero = get_field('newsblog_hero');
+      $newsblog_title = !empty($newsblog_hero['title']) ? $newsblog_hero['title'] : 'Летние развлечения в детском центре «Тантана»';
       ?>
       <section class="news-blog">
         <div class="news-blog__container">
           <div class="news-blog__left">
             <span class="news-blog__left_span"><?php echo !empty($newsblog_hero['date']) ? $newsblog_hero['date'] : '12 июня 2024'; ?></span>
-            <h4 class="news-blog__left_title">
-              <?php echo !empty($newsblog_hero['title']) ? $newsblog_hero['title'] : 'Летние развлечения в детском центре развития и развлечения TANTANA'; ?>
-            </h4>
+            <h2 class="news-blog__left_title">
+              <?php echo $newsblog_title; ?>
+            </h2>
             <span class="news-blog__left_span"> <?php echo !empty($newsblog_hero['tag']) ? $newsblog_hero['tag'] : 'новое'; ?> </span>
           </div>
 
           <div class="news-blog__center">
             <img
               src="<?php echo !empty($newsblog_hero['center_image']) ? $newsblog_hero['center_image'] : '/wp-content/uploads/2025/04/newsCenter.png'; ?>"
-              alt=""
+              alt="<?php echo $newsblog_title; ?>"
               class="news-blog__fon"
             />
             <div class="news-blog__center_container">
               <h1 class="news-blog__center_title">
-                <?php echo !empty($newsblog_hero['title']) ? $newsblog_hero['title'] : 'Летние развлечения в детском центре развития и развлечения TANTANA'; ?>
+                <?php echo $newsblog_title; ?>
               </h1>
               <img
                 src="<?php echo !empty($newsblog_hero['content_image']) ? $newsblog_hero['content_image'] : '/wp-content/uploads/2025/04/newsCenteriMG.png'; ?>"
-                alt=""
+                alt="<?php echo $newsblog_title; ?>"
                 class="news-blog__center_img"
               />
             </div>
@@ -39,9 +40,9 @@
 
           <div class="news-blog__left news-blog__right">
             <span class="news-blog__left_span"><?php echo !empty($newsblog_hero['date']) ? $newsblog_hero['date'] : '12 июня 2024'; ?></span>
-            <h4 class="news-blog__left_title">
-              <?php echo !empty($newsblog_hero['title']) ? $newsblog_hero['title'] : 'Летние развлечения в детском центре развития и развлечения TANTANA'; ?>
-            </h4>
+            <h2 class="news-blog__left_title">
+              <?php echo $newsblog_title; ?>
+            </h2>
             <span class="news-blog__left_span"> <?php echo !empty($newsblog_hero['tag']) ? $newsblog_hero['tag'] : 'новое'; ?> </span>
           </div>
         </div>
@@ -91,19 +92,19 @@
             <?php foreach ($newsblog_images['top'] as $image): ?>
               <img
                 src="<?php echo !empty($image['image']) ? $image['image'] : '/wp-content/uploads/2025/04/newsimg1.png'; ?>"
-                alt=""
+                alt="<?php echo !empty($image['alt']) ? $image['alt'] : $newsblog_title; ?>"
                 class="news-blog__img_container_img"
               />
             <?php endforeach; ?>
           <?php else: ?>
             <img
               src="/wp-content/uploads/2025/04/newsimg1.png"
-              alt=""
+              alt="<?php echo $newsblog_title; ?>"
               class="news-blog__img_container_img"
             />
             <img
               src="/wp-content/uploads/2025/04/newsimg2.png"
-              alt=""
+              alt="<?php echo $newsblog_title; ?>"
               class="news-blog__img_container_img"
             />
           <?php endif; ?>
@@ -113,7 +114,7 @@
           <?php if (!empty($newsblog_images['bottom'])): ?>
             <img
               src="<?php echo !empty($newsblog_images['bottom']['image']) ? $newsblog_images['bottom']['image'] : '/wp-content/uploads/2025/04/newsimg3.png'; ?>"
-              alt=""
+              alt="<?php echo !empty($newsblog_images['bottom']['alt']) ? $newsblog_images['bottom']['alt'] : $newsblog_title; ?>"
               class="news-blog__img_container2_img"
             />
             <p class="news-blog__img_container2_text">
@@ -125,7 +126,7 @@
           <?php else: ?>
             <img
               src="/wp-content/uploads/2025/04/newsimg3.png"
-              alt=""
+              alt="<?php echo $newsblog_title; ?>"
               class="news-blog__img_container2_img"
             />
             <p class="news-blog__img_container2_text">

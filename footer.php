@@ -69,7 +69,7 @@
       </div>
       <div class="footer__container_info">
         <div class="footer__info">
-          <h4 class="footer__info_name">адрес:</h4>
+          <h3 class="footer__info_name">адрес:</h3>
           <p class="footer__info_description">
             <?php echo get_field('address', 'option') ?: 'г. Симферополь, ул Генерала Васильева 40а'; ?>
           </p>
@@ -97,9 +97,9 @@
       </div>
 
       <div class="footer__container_feedback">
-        <h4 class="footer__text">
+        <h2 class="footer__text">
           оставьте заявку, и мы поможем организовать лучший праздник
-        </h4>
+        </h2>
 
         <!-- <form class="footer__form" action="" method="post">
   <label style="display: none" for="name"></label>

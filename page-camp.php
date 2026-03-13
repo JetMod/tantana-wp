@@ -12,7 +12,8 @@ get_header();
 
 <main class="main">
       <section class="camp">
-        <h2 class="camp__title">
+        <h1 class="camp__title">
+          <span aria-hidden="true" class="camp__title_decor">
           <?php
           $camp_hero = get_field('camp_hero_section');
           if ($camp_hero && !empty($camp_hero['camp_hero_colored_title'])) {
@@ -26,28 +27,30 @@ get_header();
                   if (!empty($class)) {
                       $letter_class .= ' ' . $class;
                   }
-                  
-                  echo "<span class=\"{$letter_class}\"> {$letter} </span>";
+                  echo "<span class=\"{$letter_class}\">{$letter}</span>";
               }
           } else {
               // Значения по умолчанию
               ?>
-              <span class="blue"> T </span>
-              <span class="orange"> A </span>
-              <span class="green"> N </span>
-              <span class="yellow"> T </span>
-              <span class="red"> A </span>
-              <span class="green"> N </span>
-              <span class="yellow"> A </span>
-              <span class="camp__title_block"> </span>
-              <span class="orange camp__title_margin"> c </span>
-              <span class="blue"> A </span>
-              <span class="red"> m </span>
-              <span class="green"> p </span>
+              <span class="blue">T</span>
+              <span class="orange">A</span>
+              <span class="green">N</span>
+              <span class="yellow">T</span>
+              <span class="red">A</span>
+              <span class="green">N</span>
+              <span class="yellow">A</span>
+              <span class="orange camp__title_margin">C</span>
+              <span class="blue">a</span>
+              <span class="red">m</span>
+              <span class="green">p</span>
               <?php
           }
           ?>
-        </h2>
+          </span>
+          <span style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
+            Tantana Camp — лагерь для детей 7–12 лет
+          </span>
+        </h1>
 
         <div class="camp__container">
           <?php
@@ -71,7 +74,8 @@ get_header();
               ?>
 
               <div class="camp__container_center">
-                <img src="<?php echo $camp_hero['camp_hero_image'] ?: '/wp-content/uploads/2025/04/campTitle-1.png'; ?>" alt="" class="camp__img" />
+                <?php $camp_hero_alt = !empty($camp_hero['camp_hero_image_alt']) ? $camp_hero['camp_hero_image_alt'] : 'Лагерь «Tantana»'; ?>
+                <img src="<?php echo $camp_hero['camp_hero_image'] ?: '/wp-content/uploads/2025/04/campTitle-1.png'; ?>" alt="<?php echo $camp_hero_alt; ?>" class="camp__img" />
                 <div class="camp__container_text">
                   <p class="camp__container_text">
                     <?php echo $camp_hero['camp_hero_description'] ?: '5 дней свежих эмоций, новых знаний и ярких знакомств эксклюзивный культурно-познавательный проект для детей от 7 до 12 лет!'; ?>
@@ -97,7 +101,7 @@ get_header();
               </div>
 
               <div class="camp__container_center">
-                <img src="/wp-content/uploads/2025/04/campTitle-1.png" alt="" class="camp__img" />
+                <img src="/wp-content/uploads/2025/04/campTitle-1.png" alt="Лагерь «Tantana»" class="camp__img" />
                 <div class="camp__container_text">
                   <p class="camp__container_text">
                     5 дней свежих эмоций, новых знаний и ярких знакомств
@@ -126,11 +130,12 @@ get_header();
           if ($camp_gallery && !empty($camp_gallery['gallery_images'])) {
               foreach ($camp_gallery['gallery_images'] as $item) {
                   $image = $item['image'];
+                  $image_alt = !empty($item['alt']) ? $item['alt'] : 'Фото лагеря «Tantana»';
                   ?>
                   <li class="gamegallery__card">
                     <img
                       src="<?php echo $image; ?>"
-                      alt=""
+                      alt="<?php echo $image_alt; ?>"
                       class="gamegallery__img"
                     />
                   </li>
@@ -142,7 +147,7 @@ get_header();
               <li class="gamegallery__card">
                 <img
                   src="/wp-content/uploads/2025/04/1camp-369-1.png"
-                  alt=""
+                  alt="Фото лагеря «Tantana»"
                   class="gamegallery__img"
                 />
               </li>
@@ -150,7 +155,7 @@ get_header();
               <li class="gamegallery__card">
                 <img
                   src="/wp-content/uploads/2025/04/2camp-1.png"
-                  alt=""
+                  alt="Фото лагеря «Tantana»"
                   class="gamegallery__img"
                 />
               </li>
@@ -158,7 +163,7 @@ get_header();
               <li class="gamegallery__card">
                 <img
                   src="/wp-content/uploads/2025/04/3camp.png"
-                  alt=""
+                  alt="Фото лагеря «Tantana»"
                   class="gamegallery__img"
                 />
               </li>
@@ -166,7 +171,7 @@ get_header();
               <li class="gamegallery__card">
                 <img
                   src="/wp-content/uploads/2025/04/4camp-1.png"
-                  alt=""
+                  alt="Фото лагеря «Tantana»"
                   class="gamegallery__img"
                 />
               </li>
@@ -174,7 +179,7 @@ get_header();
               <li class="gamegallery__card">
                 <img
                   src="/wp-content/uploads/2025/04/5camp-1.png"
-                  alt=""
+                  alt="Фото лагеря «Tantana»"
                   class="gamegallery__img"
                 />
               </li>
@@ -182,14 +187,14 @@ get_header();
               <li class="gamegallery__card">
                 <img
                   src="/wp-content/uploads/2025/04/3camp-1.png"
-                  alt=""
+                  alt="Фото лагеря «Tantana»"
                   class="gamegallery__img"
                 />
               </li>
               <li class="gamegallery__card">
                 <img
                   src="/wp-content/uploads/2025/04/1camp-369.png"
-                  alt=""
+                  alt="Фото лагеря «Tantana»"
                   class="gamegallery__img"
                 />
               </li>
@@ -197,7 +202,7 @@ get_header();
               <li class="gamegallery__card">
                 <img
                   src="/wp-content/uploads/2025/04/2game.png"
-                  alt=""
+                  alt="Фото лагеря «Tantana»"
                   class="gamegallery__img"
                 />
               </li>
@@ -215,7 +220,7 @@ get_header();
         <?php $camp_price = get_field('camp_price_section'); ?>
         <div class="price__container">
           <div class="price__container_title">
-            <h4 class="price__title"><?php echo $camp_price['price_title'] ?: 'Стоимость посещения игровой'; ?></h4>
+            <h2 class="price__title"><?php echo $camp_price['price_title'] ?: 'Стоимость посещения игровой'; ?></h2>
             <p class="price__text"><?php echo $camp_price['price_text'] ?: '*Для сопровождающих вход свободный'; ?></p>
           </div>
           <div class="price__cards_container">
@@ -228,6 +233,9 @@ get_header();
                       $duration = $item['duration'];
                       $price = $item['price'];
                       $class = $item['class'];
+                      $duration_text = !empty($duration) ? strip_tags($duration) : '30 минут';
+                      $card_alt = !empty($item['card_alt']) ? $item['card_alt'] : 'Тариф лагеря «Tantana»';
+                      $icon_alt = 'Иконка тарифа: ' . $duration_text;
                       
                       // Определяем класс для текста
                       $text_class = 'price__container_text';
@@ -238,14 +246,14 @@ get_header();
                       <div class="price__card">
                         <img
                           src="<?php echo $image; ?>"
-                          alt=""
+                          alt="<?php echo $card_alt; ?>"
                           class="price__card_img"
                         />
                         <div class="price__card_container">
                           <div class="price__container_img">
                             <img
                               src="<?php echo $icon; ?>"
-                              alt=""
+                              alt="<?php echo $icon_alt; ?>"
                               class="price__img_icon"
                             />
                             <div class="<?php echo $text_class; ?>"><?php echo $duration; ?></div>
@@ -261,14 +269,14 @@ get_header();
                   <div class="price__card">
                     <img
                       src="/wp-content/uploads/2025/04/priceO.webp"
-                      alt=""
+                      alt="Тариф 30 минут"
                       class="price__card_img"
                     />
                     <div class="price__card_container">
                       <div class="price__container_img">
                         <img
                           src="/wp-content/uploads/2025/04/priceIconO.svg"
-                          alt=""
+                          alt="Иконка тарифа 30 минут"
                           class="price__img_icon"
                         />
                         <div class="price__container_text">30 минут</div>
@@ -280,14 +288,14 @@ get_header();
                   <div class="price__card">
                     <img
                       src="/wp-content/uploads/2025/04/priceB.webp"
-                      alt=""
+                      alt="Тариф 60 минут"
                       class="price__card_img"
                     />
                     <div class="price__card_container">
                       <div class="price__container_img">
                         <img
                           src="/wp-content/uploads/2025/04/priceIconB.svg"
-                          alt=""
+                          alt="Иконка тарифа 60 минут"
                           class="price__img_icon"
                         />
                         <div class="price__container_text price__container_b">
@@ -301,14 +309,14 @@ get_header();
                   <div class="price__card">
                     <img
                       src="/wp-content/uploads/2025/04/priceF.webp"
-                      alt=""
+                      alt="Тариф безлимит"
                       class="price__card_img"
                     />
                     <div class="price__card_container">
                       <div class="price__container_img">
                         <img
                           src="/wp-content/uploads/2025/04/priceIconF.svg"
-                          alt=""
+                          alt="Иконка тарифа безлимит"
                           class="price__img_icon"
                         />
                         <div class="price__container_text price__container_f">

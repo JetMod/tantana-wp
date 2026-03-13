@@ -1,5 +1,5 @@
 <section class="schedule">
-        <h4 class="schedule__title">Расписание занятий</h4>
+        <h2 class="schedule__title">Расписание занятий</h2>
         <div class="schedule__line">
             <p class="schedule__time">день недели</p>
             <p class="schedule__time">время занятий</p>
@@ -16,17 +16,15 @@
                             </div>
 
                             <div class="schedule__card_white">
-                                <h4 class="schedule__card_time">9:00</h4>
+                                <h3 class="schedule__card_time">9:00</h3>
                                 <div class="schedule__card_container">
                                     <img
-                                            src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                            alt=""
+                                            src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                             class="schedule__card_img"
                                     />
                                     <p class="schedule__card_text">3-5 лет</p>
                                     <img
-                                            src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                            alt=""
+                                            src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                             class="schedule__card_img"
                                     />
                                     <p class="schedule__card_text">45 минут</p>
@@ -43,17 +41,15 @@
                             </div>
 
                             <div class="schedule__card_white">
-                                <h4 class="schedule__card_time">10:00</h4>
+                                <h3 class="schedule__card_time">10:00</h3>
                                 <div class="schedule__card_container">
                                     <img
-                                            src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                            alt=""
+                                            src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                             class="schedule__card_img"
                                     />
                                     <p class="schedule__card_text">1,5-2 года</p>
                                     <img
-                                            src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                            alt=""
+                                            src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                             class="schedule__card_img"
                                     />
                                     <p class="schedule__card_text">45 минут</p>
@@ -70,17 +66,15 @@
                             </div>
 
                             <div class="schedule__card_white">
-                                <h4 class="schedule__card_time">11:00</h4>
+                                <h3 class="schedule__card_time">11:00</h3>
                                 <div class="schedule__card_container">
                                     <img
-                                            src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                            alt=""
+                                            src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                             class="schedule__card_img"
                                     />
                                     <p class="schedule__card_text">2-3 года</p>
                                     <img
-                                            src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                            alt=""
+                                            src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                             class="schedule__card_img"
                                     />
                                     <p class="schedule__card_text">45 минут</p>
@@ -97,17 +91,15 @@
                             </div>
 
                             <div class="schedule__card_white">
-                                <h4 class="schedule__card_time">12:00</h4>
+                                <h3 class="schedule__card_time">12:00</h3>
                                 <div class="schedule__card_container">
                                     <img
-                                            src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                            alt=""
+                                            src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                             class="schedule__card_img"
                                     />
                                     <p class="schedule__card_text">3-5 года</p>
                                     <img
-                                            src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                            alt=""
+                                            src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                             class="schedule__card_img"
                                     />
                                     <p class="schedule__card_text">45 минут</p>
@@ -122,17 +114,15 @@
                             </div>
 
                             <div class="schedule__card_white">
-                                <h4 class="schedule__card_time">13:00</h4>
+                                <h3 class="schedule__card_time">13:00</h3>
                                 <div class="schedule__card_container">
                                     <img
-                                            src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                            alt=""
+                                            src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                             class="schedule__card_img"
                                     />
                                     <p class="schedule__card_text">3-5 лет</p>
                                     <img
-                                            src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                            alt=""
+                                            src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                             class="schedule__card_img"
                                     />
                                     <p class="schedule__card_text">45 минут</p>
@@ -149,17 +139,15 @@
                             </div>
 
                             <div class="schedule__card_white">
-                                <h4 class="schedule__card_time">17:00</h4>
+                                <h3 class="schedule__card_time">17:00</h3>
                                 <div class="schedule__card_container">
                                     <img
-                                            src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                            alt=""
+                                            src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                             class="schedule__card_img"
                                     />
                                     <p class="schedule__card_text">5-8 лет</p>
                                     <img
-                                            src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                            alt=""
+                                            src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                             class="schedule__card_img"
                                     />
                                     <p class="schedule__card_text">45 минут</p>
@@ -197,17 +185,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">9:00</h4>
+                            <h3 class="schedule__card_time">9:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -224,17 +210,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">10:00</h4>
+                            <h3 class="schedule__card_time">10:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">1,5-2 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -251,17 +235,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">11:00</h4>
+                            <h3 class="schedule__card_time">11:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">2-3 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -278,17 +260,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">12:00</h4>
+                            <h3 class="schedule__card_time">12:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -303,17 +283,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">13:00</h4>
+                            <h3 class="schedule__card_time">13:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -330,17 +308,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">17:00</h4>
+                            <h3 class="schedule__card_time">17:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">5-8 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -378,17 +354,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">9:00</h4>
+                            <h3 class="schedule__card_time">9:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -405,17 +379,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">10:00</h4>
+                            <h3 class="schedule__card_time">10:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">1,5-2 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -432,17 +404,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">11:00</h4>
+                            <h3 class="schedule__card_time">11:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">2-3 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -459,17 +429,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">12:00</h4>
+                            <h3 class="schedule__card_time">12:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -484,17 +452,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">13:00</h4>
+                            <h3 class="schedule__card_time">13:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -511,17 +477,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">17:00</h4>
+                            <h3 class="schedule__card_time">17:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">5-8 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -559,17 +523,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">9:00</h4>
+                            <h3 class="schedule__card_time">9:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -586,17 +548,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">10:00</h4>
+                            <h3 class="schedule__card_time">10:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">1,5-2 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -613,17 +573,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">11:00</h4>
+                            <h3 class="schedule__card_time">11:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">2-3 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -640,17 +598,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">12:00</h4>
+                            <h3 class="schedule__card_time">12:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -665,17 +621,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">13:00</h4>
+                            <h3 class="schedule__card_time">13:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -692,17 +646,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">17:00</h4>
+                            <h3 class="schedule__card_time">17:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">5-8 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -740,17 +692,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">9:00</h4>
+                            <h3 class="schedule__card_time">9:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -767,17 +717,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">10:00</h4>
+                            <h3 class="schedule__card_time">10:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">1,5-2 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -794,17 +742,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">11:00</h4>
+                            <h3 class="schedule__card_time">11:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">2-3 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -821,17 +767,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">12:00</h4>
+                            <h3 class="schedule__card_time">12:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -846,17 +790,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">13:00</h4>
+                            <h3 class="schedule__card_time">13:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -873,17 +815,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">17:00</h4>
+                            <h3 class="schedule__card_time">17:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">5-8 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -921,17 +861,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">9:00</h4>
+                            <h3 class="schedule__card_time">9:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -948,17 +886,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">10:00</h4>
+                            <h3 class="schedule__card_time">10:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">1,5-2 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -975,17 +911,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">11:00</h4>
+                            <h3 class="schedule__card_time">11:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">2-3 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1002,17 +936,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">12:00</h4>
+                            <h3 class="schedule__card_time">12:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1027,17 +959,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">13:00</h4>
+                            <h3 class="schedule__card_time">13:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1054,17 +984,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">17:00</h4>
+                            <h3 class="schedule__card_time">17:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">5-8 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1102,17 +1030,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">9:00</h4>
+                            <h3 class="schedule__card_time">9:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1129,17 +1055,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">10:00</h4>
+                            <h3 class="schedule__card_time">10:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">1,5-2 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1156,17 +1080,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">11:00</h4>
+                            <h3 class="schedule__card_time">11:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">2-3 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1183,17 +1105,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">12:00</h4>
+                            <h3 class="schedule__card_time">12:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1208,17 +1128,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">13:00</h4>
+                            <h3 class="schedule__card_time">13:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1235,17 +1153,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">17:00</h4>
+                            <h3 class="schedule__card_time">17:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">5-8 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1283,17 +1199,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">9:00</h4>
+                            <h3 class="schedule__card_time">9:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1310,17 +1224,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">10:00</h4>
+                            <h3 class="schedule__card_time">10:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">1,5-2 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1337,17 +1249,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">11:00</h4>
+                            <h3 class="schedule__card_time">11:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">2-3 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1364,17 +1274,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">12:00</h4>
+                            <h3 class="schedule__card_time">12:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 года</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1389,17 +1297,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">13:00</h4>
+                            <h3 class="schedule__card_time">13:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">3-5 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>
@@ -1416,17 +1322,15 @@
                         </div>
 
                         <div class="schedule__card_white">
-                            <h4 class="schedule__card_time">17:00</h4>
+                            <h3 class="schedule__card_time">17:00</h3>
                             <div class="schedule__card_container">
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleProfile.svg" alt="Возраст группы"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">5-8 лет</p>
                                 <img
-                                        src="/wp-content/uploads/2025/04/scheduleTime.svg"
-                                        alt=""
+                                        src="/wp-content/uploads/2025/04/scheduleTime.svg" alt="Длительность занятия"
                                         class="schedule__card_img"
                                 />
                                 <p class="schedule__card_text">45 минут</p>

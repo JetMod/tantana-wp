@@ -18,12 +18,16 @@ get_header();
         $title = !empty($contact) ? $contact : get_the_title();
         ?>
         <div class="contact__title_container">
-          <h1 class="contact__title"><?php echo $title; ?></h1>
+          <h1 class="contact__title"><?php echo $title; ?>
+            <span style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
+              Контакты детского центра «Тантана»
+            </span>
+          </h1>
           <span class="contact__title-shadow"><?php echo $title; ?> </span>
         </div>
 
 		  <div class="contact__container">
-			  <h4 class="contact__container_text">контактные </h4>
+			  <h2 class="contact__container_text">контактные данные</h2>
 			  <ul class="contact__ul">
 				  <li class="contact__li">
 					  <?php the_field( 'address' ); ?>
@@ -41,7 +45,7 @@ get_header();
 
         <?php if ($contact_social && !empty($contact_social)): ?>
         <div class="contact__container">
-          <h4 class="contact__container_text">соцсети</h4>
+          <h2 class="contact__container_text">соцсети</h2>
           <ul class="contact__ul">
             <?php foreach ($contact_social as $social): ?>
             <li class="contact__li<?php echo !empty($social['border']) && $social['border'] ? ' contact__li_border' : ''; ?>">

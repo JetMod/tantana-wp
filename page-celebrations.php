@@ -7,9 +7,22 @@
 <main class="main">
       <section class="hero__section">
         <?php $hero_section = get_field('celebrations_hero_section'); ?>
-        <img src="<?php echo $hero_section['hero_bg'] ?: '/wp-content/uploads/2025/04/hero-bg.webp'; ?>" alt="" class="hero__bg" />
+        <?php $hero_bg_alt = !empty($hero_section['hero_bg_alt']) ? $hero_section['hero_bg_alt'] : 'Фон страницы «Торжества» детского центра «Тантана»'; ?>
+        <img src="<?php echo $hero_section['hero_bg'] ?: '/wp-content/uploads/2025/04/hero-bg.webp'; ?>" alt="<?php echo $hero_bg_alt; ?>" class="hero__bg" />
         <div class="hero__heading">
-          <h1 class="hero__title"><?php echo $hero_section['hero_title'] ?: 'Торжества'; ?></h1>
+          <?php
+          // Длинный вариант для SEO/скринридеров, визуально скрыт
+          $hero_title_visible = $hero_section['hero_title'] ?: 'Торжества';
+          $hero_title_long = !empty($hero_section['hero_title_full'])
+              ? $hero_section['hero_title_full']
+              : 'Торжества в детском центре «Тантана»: праздники';
+          ?>
+          <h1 class="hero__title">
+            <?php echo $hero_title_visible; ?>
+            <span style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;">
+              <?php echo $hero_title_long; ?>
+            </span>
+          </h1>
           <span class="hero__title-shadow"><?php echo $hero_section['hero_title_shadow'] ?: 'Торжества'; ?></span>
         </div>
         <ul class="hero__images">
@@ -156,9 +169,10 @@
               </span>
             </div>
             <div class="gallery__slider-slide">
+              <?php $gallery_main_alt = !empty($gallery_section['gallery_main_alt']) ? $gallery_section['gallery_main_alt'] : 'Главное фото галереи торжеств «Тантана»'; ?>
               <img
                 src="<?php echo $gallery_section['gallery_main_image'] ?: '/wp-content/uploads/2025/04/Rectangle-70.png'; ?>"
-                alt=""
+                alt="<?php echo $gallery_main_alt; ?>"
                 class="gallery__slider-image"
               />
             </div>
@@ -241,7 +255,7 @@
       <section class="advantages__section">
         <?php $advantages_section = get_field('celebrations_advantages_section'); ?>
         <div class="advantages__container_title">
-          <h4 class="advantages__title"><?php echo $advantages_section['advantages_title'] ?: 'преимущества'; ?></h4>
+          <h2 class="advantages__title"><?php echo $advantages_section['advantages_title'] ?: 'преимущества'; ?></h2>
           <h2 class="advantages__title_text">
             <?php echo $advantages_section['advantages_subtitle'] ?: 'Преимущества проведения дня рождения в «Тантана»'; ?>
           </h2>
@@ -371,7 +385,7 @@
         <div class="price__container">
           <?php $price_section = get_field('celebrations_price_section'); ?>
           <div class="price__container_title">
-            <h4 class="price__title"><?php echo $price_section['price_title'] ?: 'аренда зала'; ?></h4>
+            <h2 class="price__title"><?php echo $price_section['price_title'] ?: 'аренда зала'; ?></h2>
             <p class="price__text"><?php echo $price_section['price_text'] ?: '*меню в стоимость не входит'; ?></p>
           </div>
           <div class="price__cards_container">
@@ -384,6 +398,8 @@
                       $capacity = $item['capacity'];
                       $price = $item['price'];
                       $class = $item['class'];
+                      $card_alt = !empty($capacity) ? 'Зал для ' . strip_tags($capacity) : 'Зал для праздника «Тантана»';
+                      $icon_alt = !empty($capacity) ? 'Иконка вместимости: ' . strip_tags($capacity) : 'Иконка вместимости зала';
                       
                       // Определяем класс для текста
                       $text_class = 'price__container_text';
@@ -394,14 +410,14 @@
                       <div class="price__card">
                         <img
                           src="<?php echo $image; ?>"
-                          alt=""
+                          alt="<?php echo $card_alt; ?>"
                           class="price__card_img"
                         />
                         <div class="price__card_container">
                           <div class="price__container_img">
                             <img
                               src="<?php echo $icon; ?>"
-                              alt=""
+                              alt="<?php echo $icon_alt; ?>"
                               class="price__img_icon"
                             />
                             <div class="<?php echo $text_class; ?>"><?php echo $capacity; ?></div>
@@ -417,14 +433,14 @@
                   <div class="price__card">
                     <img
                       src="/wp-content/uploads/2025/04/priceO.webp"
-                      alt=""
+                      alt="Зал для до 7 детей"
                       class="price__card_img"
                     />
                     <div class="price__card_container">
                       <div class="price__container_img">
                         <img
                           src="/wp-content/uploads/2025/04/priceIconO.svg"
-                          alt=""
+                          alt="Иконка вместимости: до 7 детей"
                           class="price__img_icon"
                         />
                         <div class="price__container_text">до 7 детей</div>
@@ -436,14 +452,14 @@
                   <div class="price__card">
                     <img
                       src="/wp-content/uploads/2025/04/priceB.webp"
-                      alt=""
+                      alt="Зал для 8–15 детей"
                       class="price__card_img"
                     />
                     <div class="price__card_container">
                       <div class="price__container_img">
                         <img
                           src="/wp-content/uploads/2025/04/priceIconB.svg"
-                          alt=""
+                          alt="Иконка вместимости: 8–15 детей"
                           class="price__img_icon"
                         />
                         <div class="price__container_text price__container_b">
@@ -457,14 +473,14 @@
                   <div class="price__card">
                     <img
                       src="/wp-content/uploads/2025/04/priceF.webp"
-                      alt=""
+                      alt="Зал для 16–25 детей"
                       class="price__card_img"
                     />
                     <div class="price__card_container">
                       <div class="price__container_img">
                         <img
                           src="/wp-content/uploads/2025/04/priceIconF.svg"
-                          alt=""
+                          alt="Иконка вместимости: 16–25 детей"
                           class="price__img_icon"
                         />
                         <div class="price__container_text price__container_f">
@@ -478,14 +494,14 @@
                   <div class="price__card">
                     <img
                       src="/wp-content/uploads/2025/04/priceB.webp"
-                      alt=""
+                      alt="Зал для 26–35 детей"
                       class="price__card_img"
                     />
                     <div class="price__card_container">
                       <div class="price__container_img">
                         <img
                           src="/wp-content/uploads/2025/04/priceIconB.svg"
-                          alt=""
+                          alt="Иконка вместимости: 26–35 детей"
                           class="price__img_icon"
                         />
                         <div class="price__container_text price__container_b">
@@ -499,14 +515,14 @@
                   <div class="price__card">
                     <img
                       src="/wp-content/uploads/2025/04/priceR.webp"
-                      alt=""
+                      alt="Зал для более 36 детей"
                       class="price__card_img"
                     />
                     <div class="price__card_container">
                       <div class="price__container_img">
                         <img
                           src="/wp-content/uploads/2025/04/priceIconR.svg"
-                          alt=""
+                          alt="Иконка вместимости: более 36 детей"
                           class="price__img_icon"
                         />
                         <div class="price__container_text price__container_r">
@@ -531,7 +547,7 @@
       <section class="partners__section">
         <div class="partners__container">
           <div class="partners__title_container">
-            <h4 class="partners__title">наши партнеры</h4>
+            <h2 class="partners__title">наши партнеры</h2>
             <p class="partners__subtitle">Мы сотрудничаем с лучшими компаниями города</p>
           </div>
           <div class="partners__cards">
@@ -540,7 +556,7 @@
                 <img src="/wp-content/uploads/2025/10/mychef.png" alt="Пиццерия My Chef" class="partners__img">
               </div>
               <div class="partners__card_content">
-                <h5 class="partners__card_title">Пиццерия "My Chef"</h5>
+                <h3 class="partners__card_title">Пиццерия "My Chef"</h3>
                 <p class="partners__card_description">Вкусная пицца и итальянская кухня для ваших праздников</p>
                 <a href="https://mychefpizza.ru/" target="_blank" class="partners__card_link">
                   <span>Перейти на сайт</span>
@@ -556,7 +572,7 @@
                   <img src="/wp-content/uploads/2025/10/abc.jpg" alt="Детская игровая комната АВС-KIDS" class="partners__img">
                 </div>
                 <div class="partners__card_content">
-                  <h5 class="partners__card_title">Детская игровая комната "АВС-KIDS"</h5>
+                <h3 class="partners__card_title">Детская игровая комната "АВС-KIDS"</h3>
                   <p class="partners__card_description">Безопасная и увлекательная игровая зона для детей всех возрастов</p>
                   <a href="https://igrovaya-abc-kids.clients.site/?utm_referer=geoadv_search_yabs&utm_ya_campaign=212667537892&yabizcmpgn=51746768&utm_source=geoadv_search_yabs&utm_candidate=60935049874&utm_content=17311375997&ybaip=1&yclid=16516788817953816575" target="_blank" class="partners__card_link">
                   <span>Перейти на сайт</span>
@@ -572,7 +588,7 @@
                 <img src="src/img/png/Rectangle 80.png" alt="Shen Кондитерская" class="partners__img">
               </div>
               <div class="partners__card_content">
-                <h5 class="partners__card_title">Shen Кондитерская</h5>
+                <h3 class="partners__card_title">Shen Кондитерская</h3>
                 <div class="partners__card_features">
                   <p class="partners__feature">• Праздничные торты на заказ</p>
                   <p class="partners__feature">• Восточные лакомства</p>

@@ -3,9 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="yandex-verification" content="d951b79c1c25beea" />
     <!-- <link rel="stylesheet" href="./src/styles/style.css" /> -->
-    <title><?php echo get_bloginfo('name'); ?></title>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106920222', 'ym');
 
+        ym(106920222, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106920222" style="position:absolute; left:-9999px;" alt="Счётчик Яндекс.Метрики" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <?php wp_head(); ?>
   </head>
   <body>
@@ -15,7 +27,7 @@
         <picture>
             <source srcset="/wp-content/uploads/2025/04/logo_360.png" media="(max-width: 767px)">
             <img
-                    src="/wp-content/uploads/2025/04/logo_768.png"
+                    src="/wp-content/uploads/2026/02/2026-02-19-23.54.23-2-e1771536229845.png"
                     alt="Логотип"
                     class="header__logo"
             />
@@ -44,7 +56,7 @@
                     <a href="<?php echo site_url('/contact'); ?>" class="header__nav-link"> Контакты </a>
                 </li>
                 <li class="header__nav-item">
-                    <a href="<?php echo site_url('/masterClasses'); ?>" class="header__nav-link"> Мастер-классы </a>
+                    <a href="<?php echo site_url('/master-classes'); ?>" class="header__nav-link"> Мастер-классы </a>
                 </li>
             </ul>
         </nav>
@@ -155,7 +167,7 @@
                         </a>
                     </li>
                     <li class="sidebar__nav-item">
-                        <a href="<?php echo site_url('/masterClasses'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">
+                        <a href="<?php echo site_url('/master-classes'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">
                             МАСТЕР-КЛАССЫ
                         </a>
                     </li>

@@ -10,7 +10,7 @@ get_header();
         $hero_section = get_field('home_hero_section');
         ?>
         <h1 class="tantana__title"><?php echo $hero_section['hero_title'] ?: 'детский центр развития и развлечения'; ?></h1>
-        <h2 class="tantana__title_h">
+        <p class="tantana__title_h">
             <!-- <?php  
             // if ($hero_section && !empty($hero_section['hero_colored_title'])) {
             //     foreach ($hero_section['hero_colored_title'] as $item) {
@@ -65,19 +65,19 @@ get_header();
                   </svg>
             </span>
            
-        </h2>
+</p>
         <a class="tantana__button open-popup"> <?php echo $hero_section['hero_button_text'] ?: 'заказать праздник'; ?></a>
         <img
             src="<?php echo $hero_section['hero_mobile_image'] ?: '/wp-content/uploads/2025/04/heroTantanaMobile.png'; ?>"
-            alt=""
+            alt="<?php echo (isset($hero_section['hero_mobile_alt']) && $hero_section['hero_mobile_alt']) ? $hero_section['hero_mobile_alt'] : 'Детский центр «Тантана» — мобильный баннер'; ?>"
             class="tantana__mobile_fon" />
     </section>
-    <section class="nav">
+    <nav class="nav" aria-label="Другие развлечения">
         <?php
         // Получаем секцию один раз
         $nav_section = get_field('home_nav_section');
         ?>
-        <p class="nav__text"><?php echo $nav_section['nav_text'] ?: 'другие развлечения'; ?></p>
+        <h2 class="nav__text"><?php echo $nav_section['nav_text'] ?: 'другие развлечения'; ?></h2>
         <ul class="nav__ul">
             <?php
             
@@ -91,13 +91,13 @@ get_header();
                             <?php echo $title; ?>
 
                             <span class="nav__icons left">
-                                <img src="/wp-content/uploads/2025/04/nav1.svg" alt="" class="nav__img_1" />
-                                <img src="/wp-content/uploads/2025/04/nav2.svg" alt="" class="nav__img_2" />
-                                <img src="/wp-content/uploads/2025/04/nav3.svg" alt="" class="nav__img_3" />
+                                <img src="/wp-content/uploads/2025/04/nav1.svg" alt="Декоративный элемент навигации" class="nav__img_1" />
+                                <img src="/wp-content/uploads/2025/04/nav2.svg" alt="Иконка раздела навигации" class="nav__img_2" />
+                                <img src="/wp-content/uploads/2025/04/nav3.svg" alt="Стрелка навигации" class="nav__img_3" />
                             </span>
                             <span class="nav__icons right">
-                                <img src="/wp-content/uploads/2025/04/nav4.svg" alt="" class="nav__img_4" />
-                                <img src="/wp-content/uploads/2025/04/nav5.svg" alt="" class="nav__img_5" />
+                                <img src="/wp-content/uploads/2025/04/nav4.svg" alt="Декоративная волна навигации" class="nav__img_4" />
+                                <img src="/wp-content/uploads/2025/04/nav5.svg" alt="Украшение ссылки навигации" class="nav__img_5" />
                             </span>
                         </a>
                     </li>
@@ -107,13 +107,13 @@ get_header();
             ?>
 
         </ul>
-    </section>
+    </nav>
     <section class="description">
         <?php
         // Получаем секцию один раз
         $description_section = get_field('home_description_section');
         ?>
-        <h4 class="description__title"><?php echo $description_section['description_title'] ?: 'О нас'; ?></h4>
+        <h2 class="description__title"><?php echo $description_section['description_title'] ?: 'О нас'; ?></h2>
         <div class="description__container">
             <?php
             if ($description_section && !empty($description_section['description_images'])) {
@@ -121,19 +121,29 @@ get_header();
                 foreach ($description_section['description_images'] as $image_item) {
                     $images[] = [
                         'image' => $image_item['image'],
-                        'class' => $image_item['class']
+                        'class' => $image_item['class'],
+                        'alt' => isset($image_item['alt']) ? $image_item['alt'] : ''
                     ];
                 }
+                $description_alt_defaults = [
+                    'Фото детского центра «Тантана»',
+                    'Дети на занятии в центре «Тантана»',
+                    'Игровая зона центра «Тантана»',
+                    'Мастер-класс в центре «Тантана»',
+                    'Интерьер центра «Тантана»',
+                    'Развлечения для детей в центре «Тантана»',
+                    'Праздничное мероприятие в центре «Тантана»',
+                ];
                 
                 // Если есть изображения, выводим их
                 if (!empty($images)) {
                     ?>
                     <div class="description__container_1">
-                        <img src="<?php echo $images[0]['image'] ?: '/wp-content/uploads/2025/04/1-1.png'; ?>" alt="" class="description__img_1 <?php echo $images[0]['class']; ?>" />
+                        <img src="<?php echo $images[0]['image'] ?: '/wp-content/uploads/2025/04/1-1.png'; ?>" alt="<?php echo !empty($images[0]['alt']) ? $images[0]['alt'] : $description_alt_defaults[0]; ?>" class="description__img_1 <?php echo $images[0]['class']; ?>" />
                         <?php if (isset($images[1])): ?>
                         <img
                             src="<?php echo $images[1]['image'] ?: '/wp-content/uploads/2025/04/2.png'; ?>"
-                            alt=""
+                            alt="<?php echo !empty($images[1]['alt']) ? $images[1]['alt'] : $description_alt_defaults[1]; ?>"
                             class="description__img_1 description__img_1_center <?php echo $images[1]['class']; ?>" />
                         <?php endif; ?>
                     </div>
@@ -142,13 +152,13 @@ get_header();
                             <?php if (isset($images[2])): ?>
                             <img
                                 src="<?php echo $images[2]['image'] ?: '/wp-content/uploads/2025/04/3-1.png'; ?>"
-                                alt=""
+                                alt="<?php echo !empty($images[2]['alt']) ? $images[2]['alt'] : $description_alt_defaults[2]; ?>"
                                 class="description__img_1 description__img_1_none_2 <?php echo $images[2]['class']; ?>" />
                             <?php endif; ?>
                             <?php if (isset($images[3])): ?>
                             <img
                                 src="<?php echo $images[3]['image'] ?: '/wp-content/uploads/2025/04/33-1.png'; ?>"
-                                alt=""
+                                alt="<?php echo !empty($images[3]['alt']) ? $images[3]['alt'] : $description_alt_defaults[3]; ?>"
                                 class="description__img_1 description__img_33 <?php echo $images[3]['class']; ?>" />
                             <?php endif; ?>
                         </div>
@@ -157,20 +167,20 @@ get_header();
                                 <?php if (isset($images[4])): ?>
                                 <img
                                     src="<?php echo $images[4]['image'] ?: '/wp-content/uploads/2025/04/4-1.png'; ?>"
-                                    alt=""
+                                    alt="<?php echo !empty($images[4]['alt']) ? $images[4]['alt'] : $description_alt_defaults[4]; ?>"
                                     class="description__img_1 description__img_1_none_2 <?php echo $images[4]['class']; ?>" />
                                 <?php endif; ?>
                                 <?php if (isset($images[5])): ?>
                                 <img
                                     src="<?php echo $images[5]['image'] ?: '/wp-content/uploads/2025/04/41-1.png'; ?>"
-                                    alt=""
+                                    alt="<?php echo !empty($images[5]['alt']) ? $images[5]['alt'] : $description_alt_defaults[5]; ?>"
                                     class="description__img_1 description__img_1_none <?php echo $images[5]['class']; ?>" />
                                 <?php endif; ?>
                             </div>
                             <?php if (isset($images[6])): ?>
                             <img
                                 src="<?php echo $images[6]['image'] ?: '/wp-content/uploads/2025/04/42-1.png'; ?>"
-                                alt=""
+                                alt="<?php echo !empty($images[6]['alt']) ? $images[6]['alt'] : $description_alt_defaults[6]; ?>"
                                 class="description__img_1 description__img_33 <?php echo $images[6]['class']; ?>" />
                             <?php endif; ?>
                         </div>
@@ -180,38 +190,38 @@ get_header();
                     // Значения по умолчанию
                     ?>
                     <div class="description__container_1">
-                        <img src="/wp-content/uploads/2025/04/1-1.png" alt="" class="description__img_1" />
+                        <img src="/wp-content/uploads/2025/04/1-1.png" alt="Фото детского центра «Тантана»" class="description__img_1" />
                         <img
                             src="/wp-content/uploads/2025/04/2.png"
-                            alt=""
+                            alt="Дети на занятии в центре «Тантана»"
                             class="description__img_1 description__img_1_center" />
                     </div>
                     <div class="description__container_2">
                         <div class="description__container_3">
                             <img
                                 src="/wp-content/uploads/2025/04/3-1.png"
-                                alt=""
+                                alt="Игровая зона центра «Тантана»"
                                 class="description__img_1 description__img_1_none_2" />
                             <img
                                 src="/wp-content/uploads/2025/04/33-1.png"
-                                alt=""
+                                alt="Мастер-класс в центре «Тантана»"
                                 class="description__img_1 description__img_33" />
                         </div>
                         <div class="description__container_4">
                             <div class="description__container_flex">
                                 <img
                                     src="/wp-content/uploads/2025/04/4-1.png"
-                                    alt=""
+                                    alt="Интерьер центра «Тантана»"
                                     class="description__img_1 description__img_1_none_2" />
                                 <img
                                     src="/wp-content/uploads/2025/04/41-1.png"
-                                    alt=""
+                                    alt="Развлечения для детей в центре «Тантана»"
                                     class="description__img_1 description__img_1_none" />
                             </div>
 
                             <img
                                 src="/wp-content/uploads/2025/04/42-1.png"
-                                alt=""
+                                alt="Праздничное мероприятие в центре «Тантана»"
                                 class="description__img_1 description__img_33" />
                         </div>
                     </div>
@@ -221,38 +231,38 @@ get_header();
                 // Значения по умолчанию
                 ?>
                 <div class="description__container_1">
-                    <img src="/wp-content/uploads/2025/04/1-1.png" alt="" class="description__img_1" />
+                    <img src="/wp-content/uploads/2025/04/1-1.png" alt="Фото детского центра «Тантана»" class="description__img_1" />
                     <img
                         src="/wp-content/uploads/2025/04/2.png"
-                        alt=""
+                        alt="Дети на занятии в центре «Тантана»"
                         class="description__img_1 description__img_1_center" />
                 </div>
                 <div class="description__container_2">
                     <div class="description__container_3">
                         <img
                             src="/wp-content/uploads/2025/04/3-1.png"
-                            alt=""
+                            alt="Игровая зона центра «Тантана»"
                             class="description__img_1 description__img_1_none_2" />
                         <img
                             src="/wp-content/uploads/2025/04/33-1.png"
-                            alt=""
+                            alt="Мастер-класс в центре «Тантана»"
                             class="description__img_1 description__img_33" />
                     </div>
                     <div class="description__container_4">
                         <div class="description__container_flex">
                             <img
                                 src="/wp-content/uploads/2025/04/4-1.png"
-                                alt=""
+                                alt="Интерьер центра «Тантана»"
                                 class="description__img_1 description__img_1_none_2" />
                             <img
                                 src="/wp-content/uploads/2025/04/41-1.png"
-                                alt=""
+                                alt="Развлечения для детей в центре «Тантана»"
                                 class="description__img_1 description__img_1_none" />
                         </div>
 
                         <img
                             src="/wp-content/uploads/2025/04/42-1.png"
-                            alt=""
+                            alt="Праздничное мероприятие в центре «Тантана»"
                             class="description__img_1 description__img_33" />
                     </div>
                 </div>
@@ -325,6 +335,8 @@ get_header();
                 } elseif ($color === 'blue') {
                     $title_class .= ' cert__blue';
                 }
+                $card_alt_text = $title ? 'Акция «' . $title . '»' : 'Акционное предложение центра «Тантана»';
+                $mobile_alt_text = $title ? 'Мобильное изображение акции «' . $title . '»' : 'Мобильное изображение акции центра «Тантана»';
                 ?>
                 <div class="<?php echo $card_class; ?>" data-order="<?php echo $index; ?>">
                     <div class="cert__container_block">
@@ -332,13 +344,13 @@ get_header();
                             <h2 class="<?php echo $title_class; ?>"><?php echo $title; ?></h2>
                             <img
                                 src="<?php echo $mobile_image ?: '/wp-content/uploads/2025/04/2-1.png'; ?>"
-                                alt=""
+                                alt="<?php echo $mobile_alt_text; ?>"
                                 class="cert__img_mobile" />
                             <p class="cert__text"><?php echo $text; ?></p>
                         </div>
                         <a class="cert__button open-popup"><?php echo $button_text ?: 'заказать праздник'; ?></a>
                     </div>
-                    <img src="<?php echo $image; ?>" alt="" class="cert__img" />
+                    <img src="<?php echo $image; ?>" alt="<?php echo $card_alt_text; ?>" class="cert__img" />
                 </div>
                 <?php
             }
@@ -349,38 +361,38 @@ get_header();
                 <div class="cert__container_block">
                     <div class="cert__container">
                         <h2 class="cert__title">счастливые часы</h2>
-                        <img src="/wp-content/uploads/2025/04/2-1.png" alt="" class="cert__img_mobile" />
+                        <img src="/wp-content/uploads/2025/04/2-1.png" alt="Мобильное изображение акции «счастливые часы»" class="cert__img_mobile" />
                         <p class="cert__text">3 часа развлечений по цене одного, в будние дни с 10:00 до 13:00</p>
                     </div>
                     <a class="cert__button open-popup">заказать праздник</a>
                 </div>
-                <img src="/wp-content/uploads/2025/04/cert.png" alt="" class="cert__img" />
+                <img src="/wp-content/uploads/2025/04/cert.png" alt="Акция «счастливые часы»" class="cert__img" />
             </div>
 
             <div class="cert cert__card" data-order="1">
                 <div class="cert__container_block">
                     <div class="cert__container">
                         <h2 class="cert__title cert__red">-30% на посещение игровой</h2>
-                        <img src="/wp-content/uploads/2025/04/cert1.png" alt="" class="cert__img_mobile" />
+                        <img src="/wp-content/uploads/2025/04/cert1.png" alt="Мобильное изображение акции «-30% на посещение игровой»" class="cert__img_mobile" />
                         <p class="cert__text">Многодетным семьям и детям с ограниченными возможностями -30% на
                             посещение игровой в будние дни (при предъявлении оригинала документа)</p>
                     </div>
                     <a class="cert__button open-popup">заказать праздник</a>
                 </div>
-                <img src="/wp-content/uploads/2025/04/cert1.png" alt="" class="cert__img" />
+                <img src="/wp-content/uploads/2025/04/cert1.png" alt="Акция «-30% на посещение игровой»" class="cert__img" />
             </div>
 
             <div class="cert cert__card cert__card_2" data-order="2">
                 <div class="cert__container_block">
                     <div class="cert__container">
                         <h2 class="cert__title cert__blue">-50% именинникам</h2>
-                        <img src="/wp-content/uploads/2025/04/2-1.png" alt="" class="cert__img_mobile" />
+                        <img src="/wp-content/uploads/2025/04/2-1.png" alt="Мобильное изображение акции «-50% именинникам»" class="cert__img_mobile" />
                         <p class="cert__text">Именинникам -50% на посещение игровой (при предъявлении соответствующего
                             документа)</p>
                     </div>
                     <a class="cert__button open-popup">заказать праздник</a>
                 </div>
-                <img src="/wp-content/uploads/2025/04/cert2.png" alt="" class="cert__img" />
+                <img src="/wp-content/uploads/2025/04/cert2.png" alt="Акция «-50% именинникам»" class="cert__img" />
             </div>
             <?php
         }
@@ -393,7 +405,7 @@ get_header();
         // Получаем секцию один раз
         $info_section = get_field('home_info_section');
         ?>
-        <h4 class="info__title"><?php echo $info_section['info_title'] ?: 'РАЗВИВАЮЩИЕ ЗАНЯТИЯ'; ?></h4>
+        <h2 class="info__title"><?php echo $info_section['info_title'] ?: 'РАЗВИВАЮЩИЕ ЗАНЯТИЯ'; ?></h2>
         <div class="info__container">
             <h2 class="info__container_text">
                 <?php echo $info_section['info_text_1'] ?: 'Детский центр развития <span class="info__span">«ТАНТАНА»</span> - это центр <span class="info__span">всестороннего</span> развития ребенка!'; ?>
@@ -412,7 +424,7 @@ get_header();
             // Получаем секцию один раз
             $directions_section = get_field('home_directions_section');
             ?>
-            <h4 class="directions__title"><?php echo $directions_section['directions_title'] ?: 'НАШИ НАПРАВЛЕНИЯ'; ?></h4>
+            <h2 class="directions__title"><?php echo $directions_section['directions_title'] ?: 'НАШИ НАПРАВЛЕНИЯ'; ?></h2>
             <div>
                 <p class="directions__text">
                     <?php echo $directions_section['directions_text'] ?: 'Пробное групповое занятие - бесплатное! При покупке 2-х и более абонементов на разные виды занятий скидка -10% на ВСЕ АБОНЕМЕНТЫ!'; ?>
@@ -575,7 +587,7 @@ get_header();
                         ?>
                         <div class="cost__sliders<?php echo $active_class; ?>">
                             <div class="cost__container_img">
-                                <img src="/wp-content/uploads/2025/04/cost.svg" alt="" class="cost__card_img" />
+                                <img src="/wp-content/uploads/2025/04/cost.svg" alt="<?php echo $age ? 'Возраст: ' . strip_tags($age) : 'Декоративная карточка стоимости'; ?>" class="cost__card_img" />
                                 <p class="cost__card_text"><?php echo $age; ?></p>
                             </div>
                             <h3 class="cost__title"><?php echo $title; ?></h3>
@@ -611,7 +623,7 @@ get_header();
                     ?>
                     <div class="cost__sliders active">
                         <div class="cost__container_img">
-                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="" class="cost__card_img" />
+                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="Декоративная карточка стоимости для возраста от 1,5 лет" class="cost__card_img" />
                             <p class="cost__card_text">от 1,5 лет</p>
                         </div>
                         <h3 class="cost__title">«УМНИКИ-РАЗУМНИКИ»</h3>
@@ -645,7 +657,7 @@ get_header();
 
                     <div class="cost__sliders">
                         <div class="cost__container_img">
-                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="" class="cost__card_img" />
+                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="Декоративная карточка стоимости для возраста от 1,5 лет" class="cost__card_img" />
                             <p class="cost__card_text">от 1,5 лет</p>
                         </div>
                         <h3 class="cost__title">«АНГЛИЙСКИЙ ЯЗЫК»</h3>
@@ -681,7 +693,7 @@ get_header();
 
                     <div class="cost__sliders">
                         <div class="cost__container_img">
-                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="" class="cost__card_img" />
+                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="Декоративная карточка стоимости для возраста от 1,5 лет" class="cost__card_img" />
                             <p class="cost__card_text">от 1,5 лет</p>
                         </div>
                         <h3 class="cost__title">«Крымскотатарская хореография»</h3>
@@ -718,7 +730,7 @@ get_header();
 
                     <div class="cost__sliders">
                         <div class="cost__container_img">
-                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="" class="cost__card_img" />
+                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="Декоративная карточка стоимости для логопеда" class="cost__card_img" />
                             <p class="cost__card_text">от 1,5 лет</p>
                         </div>
                         <h3 class="cost__title">«Логопедия и дефектология»</h3>
@@ -750,7 +762,7 @@ get_header();
 
                     <div class="cost__sliders">
                         <div class="cost__container_img">
-                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="" class="cost__card_img" />
+                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="Декоративная карточка стоимости для возраста 4+" class="cost__card_img" />
                             <p class="cost__card_text">от 4+ лет</p>
                         </div>
                         <h3 class="cost__title">«МК по кондитерским изделиям»</h3>
@@ -783,7 +795,7 @@ get_header();
 
                     <div class="cost__sliders">
                         <div class="cost__container_img">
-                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="" class="cost__card_img" />
+                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="Декоративная карточка стоимости для возраста 4+" class="cost__card_img" />
                             <p class="cost__card_text">от 4+ лет</p>
                         </div>
                         <h3 class="cost__title">«МК по приготовлению пиццы»</h3>
@@ -816,7 +828,7 @@ get_header();
 
                     <div class="cost__sliders">
                         <div class="cost__container_img">
-                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="" class="cost__card_img" />
+                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="Декоративная карточка стоимости для возраста от 7 лет" class="cost__card_img" />
                             <p class="cost__card_text">от 7 лет</p>
                         </div>
                         <h3 class="cost__title">«Подготовка к ВПР»</h3>
@@ -851,7 +863,7 @@ get_header();
 
                     <div class="cost__sliders">
                         <div class="cost__container_img">
-                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="" class="cost__card_img" />
+                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="Декоративная карточка стоимости для возраста от 7 лет" class="cost__card_img" />
                             <p class="cost__card_text">от 7 лет</p>
                         </div>
                         <h3 class="cost__title">«Подготовка к школе»</h3>
@@ -892,7 +904,7 @@ get_header();
 
                     <div class="cost__sliders">
                         <div class="cost__container_img">
-                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="" class="cost__card_img" />
+                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="Декоративная карточка стоимости для индивидуальных занятий" class="cost__card_img" />
                             <p class="cost__card_text">от 7 лет</p>
                         </div>
                         <h3 class="cost__title">«Индивидуальные занятия»</h3>
@@ -929,7 +941,7 @@ get_header();
 
                     <div class="cost__sliders">
                         <div class="cost__container_img">
-                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="" class="cost__card_img" />
+                            <img src="/wp-content/uploads/2025/04/cost.svg" alt="Декоративная карточка стоимости для шахматного клуба" class="cost__card_img" />
                             <p class="cost__card_text">от 7 лет</p>
                         </div>
                         <h3 class="cost__title">«Шахматный клуб"</h3>
@@ -971,10 +983,10 @@ get_header();
                     <a href="#footer" class="cost__button"><?php echo $cost_section['cost_button_text'] ?: 'записаться'; ?></a>
                     <div class="cost__button_flex">
                         <span class="cost__button_left" role="button" tabindex="0">
-                            <img src="/wp-content/uploads/2025/04/costArrow-1.svg" alt="" />
+                            <img src="/wp-content/uploads/2025/04/costArrow-1.svg" alt="Предыдущий слайд стоимости" />
                         </span>
                         <span class="cost__button_right" role="button" tabindex="0">
-                            <img src="/wp-content/uploads/2025/04/costArrow.svg" alt="" />
+                            <img src="/wp-content/uploads/2025/04/costArrow.svg" alt="Следующий слайд стоимости" />
                         </span>
                     </div>
                 </div>
@@ -986,14 +998,14 @@ get_header();
                     foreach ($cost_section['cost_images'] as $cost_image) {
                         $image = $cost_image['image'];
                         ?>
-                        <img src="<?php echo $image ?: '/wp-content/uploads/2025/04/costImg1.png'; ?>" alt="" class="cost__img" />
+                        <img src="<?php echo $image ?: '/wp-content/uploads/2025/04/costImg1.png'; ?>" alt="Иллюстрация стоимости центра «Тантана»" class="cost__img" />
                         <?php
                     }
                 } else {
                     // Значения по умолчанию
                     ?>
-                    <img src="/wp-content/uploads/2025/04/costImg1.png" alt="" class="cost__img" />
-                    <img src="/wp-content/uploads/2025/04/costImg1.png" alt="" class="cost__img" />
+                    <img src="/wp-content/uploads/2025/04/costImg1.png" alt="Иллюстрация стоимости центра «Тантана»" class="cost__img" />
+                    <img src="/wp-content/uploads/2025/04/costImg1.png" alt="Иллюстрация стоимости центра «Тантана»" class="cost__img" />
                     <?php
                 }
                 ?>
