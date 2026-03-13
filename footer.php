@@ -14,10 +14,26 @@
     </div>
 </div>
 
+<!-- Попап успешной отправки заявки -->
+<div class="success-popup" id="successPopup" aria-hidden="true">
+    <div class="success-popup__overlay"></div>
+    <div class="success-popup__content">
+        <div class="success-popup__icon" aria-hidden="true">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="3"/>
+                <path d="M20 32l8 8 16-16" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <h3 class="success-popup__title">Ваша заявка принята!</h3>
+        <p class="success-popup__text">Мы свяжемся с вами в ближайшее время и поможем организовать праздник.</p>
+        <button type="button" class="success-popup__close">Отлично</button>
+    </div>
+</div>
+
 <footer class="footer" id="footer">
       <div class="footer__contacts_mobile">
         <ul class="footer__contacts">
-          <?php if (get_field('telegram', 'option')): ?>
+          <?php if (false && get_field('telegram', 'option')): ?>
           <li class="footer__contacts-li">
             <a href="<?php echo get_field('telegram', 'option')['link']; ?>" class="footer__contacts-link">
               <img
@@ -29,7 +45,7 @@
           </li>
           <?php endif; ?>
           
-          <?php if (get_field('whatsapp', 'option')): ?>
+          <?php if (false && get_field('whatsapp', 'option')): ?>
           <li class="footer__contacts-li">
             <a href="<?php echo get_field('whatsapp', 'option')['link']; ?>" class="footer__contacts-link">
               <img
@@ -53,7 +69,7 @@
           </li>
           <?php endif; ?>
           
-          <?php if (get_field('viber', 'option')): ?>
+          <?php if (false && get_field('viber', 'option')): ?>
           <li class="footer__contacts-li">
             <a href="<?php echo get_field('viber', 'option')['link']; ?>" class="footer__contacts-link">
               <img
@@ -131,7 +147,7 @@
 <?php echo do_shortcode('[contact-form-7 id="82eae84" title="Форма в футере"]') ?>
         <div class="footer__contacts_container">
           <ul class="footer__contacts">
-            <?php if (get_field('telegram', 'option')): ?>
+            <?php if (false && get_field('telegram', 'option')): ?>
             <li class="footer__contacts-li">
               <a href="<?php echo get_field('telegram', 'option')['link']; ?>" class="footer__contacts-link">
                 <img
@@ -143,7 +159,7 @@
             </li>
             <?php endif; ?>
             
-            <?php if (get_field('whatsapp', 'option')): ?>
+            <?php if (false && get_field('whatsapp', 'option')): ?>
             <li class="footer__contacts-li">
               <a href="<?php echo get_field('whatsapp', 'option')['link']; ?>" class="footer__contacts-link">
                 <img
@@ -167,7 +183,7 @@
             </li>
             <?php endif; ?>
             
-            <?php if (get_field('viber', 'option')): ?>
+            <?php if (false && get_field('viber', 'option')): ?>
             <li class="footer__contacts-li">
               <a href="<?php echo get_field('viber', 'option')['link']; ?>" class="footer__contacts-link">
                 <img
@@ -197,7 +213,8 @@
     const overlay = popup.querySelector('.popup__overlay');
 const openButtons = document.querySelectorAll('.open-popup');
 openButtons.forEach((btn) => {
-  btn.addEventListener('click', () => { 
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
     popup.classList.add('popup_active');
   });
 });
@@ -212,6 +229,35 @@ openButtons.forEach((btn) => {
     overlay.addEventListener('click', () => {
       popup.classList.remove('popup_active');
     });
+
+    // Попап «Заявка принята» после успешной отправки CF7
+    const successPopup = document.getElementById('successPopup');
+    if (successPopup) {
+      const successOverlay = successPopup.querySelector('.success-popup__overlay');
+      const successCloseBtn = successPopup.querySelector('.success-popup__close');
+
+      function openSuccessPopup() {
+        popup.classList.remove('popup_active');
+        successPopup.classList.add('success-popup_active');
+        successPopup.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeSuccessPopup() {
+        successPopup.classList.remove('success-popup_active');
+        successPopup.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      document.addEventListener('wpcf7mailsent', function(event) {
+        if (event.detail && event.detail.contactFormId) {
+          openSuccessPopup();
+        }
+      }, false);
+
+      if (successCloseBtn) successCloseBtn.addEventListener('click', closeSuccessPopup);
+      if (successOverlay) successOverlay.addEventListener('click', closeSuccessPopup);
+    }
   });
 </script>
 
@@ -244,12 +290,19 @@ openButtons.forEach((btn) => {
 
     const sidebar = document.querySelector('.sidebar');
 
+    var sidebarScrollY = 0;
     function sidebarOpen() {
+        sidebarScrollY = window.scrollY;
+        document.body.style.top = '-' + sidebarScrollY + 'px';
         sidebar.classList.add('sidebar-active');
+        document.body.classList.add('sidebar-open');
     }
 
     function sidebarClose() {
         sidebar.classList.remove('sidebar-active');
+        document.body.classList.remove('sidebar-open');
+        document.body.style.top = '';
+        window.scrollTo(0, sidebarScrollY);
     }
 
     window.sidebarOpen = sidebarOpen;
@@ -279,42 +332,6 @@ openButtons.forEach((btn) => {
             }
         });
     });
-
-//     document.querySelectorAll(".schedule__day").forEach((day) => {
-//         day.addEventListener("click", function () {
-//             document
-//                 .querySelectorAll(".schedule__day.active")
-//                 .forEach((activeDay) => {
-//                     if (activeDay !== this) {
-//                         activeDay.classList.remove("active");
-
-//                         const scheduleCards = activeDay.querySelector(".schedule__cards");
-//                         if (scheduleCards) {
-//                             scheduleCards.style.maxHeight = "0";
-//                             scheduleCards.style.opacity = "0";
-//                             scheduleCards.style.visibility = "hidden";
-//                         }
-//                     }
-//                 });
-
-//             this.classList.toggle("active");
-
-//             const scheduleCards = this.querySelector(".schedule__cards");
-//             if (scheduleCards) {
-//                 if (this.classList.contains("active")) {
-//                     scheduleCards.style.maxHeight = scheduleCards.scrollHeight + "px";
-//                     scheduleCards.style.opacity = "1";
-//                     scheduleCards.style.visibility = "visible";
-//                 } else {
-//                     scheduleCards.style.maxHeight = "0";
-//                     scheduleCards.style.opacity = "0";
-//                     scheduleCards.style.visibility = "hidden";
-//                 }
-//             }
-//         });
-//     });
-// });
-
 
 document.querySelectorAll(".schedule__day").forEach((day) => {
     day.addEventListener("click", function () {
