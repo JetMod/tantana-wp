@@ -1,0 +1,142 @@
+[
+    {
+        "key": "group_tantana_schedule",
+        "title": "Расписание занятий",
+        "fields": [
+            {
+                "key": "field_schedule_title",
+                "label": "Заголовок секции",
+                "name": "schedule_title",
+                "type": "text",
+                "instructions": "Основной заголовок блока расписания",
+                "default_value": "Расписание занятий",
+                "placeholder": ""
+            },
+            {
+                "key": "field_schedule_column_left",
+                "label": "Подпись колонки 1",
+                "name": "schedule_column_left",
+                "type": "text",
+                "instructions": "Текст над первой колонкой (например: день недели)",
+                "default_value": "день недели",
+                "placeholder": ""
+            },
+            {
+                "key": "field_schedule_column_right",
+                "label": "Подпись колонки 2",
+                "name": "schedule_column_right",
+                "type": "text",
+                "instructions": "Текст над второй колонкой (например: время занятий)",
+                "default_value": "время занятий",
+                "placeholder": ""
+            },
+            {
+                "key": "field_schedule_days",
+                "label": "Дни недели",
+                "name": "schedule_days",
+                "type": "repeater",
+                "instructions": "Добавьте день и заполните карточки занятий. Первый день по умолчанию открыт.",
+                "required": 0,
+                "collapsed": "field_schedule_day_name",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "Добавить день",
+                "sub_fields": [
+                    {
+                        "key": "field_schedule_day_name",
+                        "label": "Название дня",
+                        "name": "day_name",
+                        "type": "text",
+                        "instructions": "Например: Понедельник, вторник, по записи",
+                        "default_value": "",
+                        "placeholder": "Понедельник"
+                    },
+                    {
+                        "key": "field_schedule_day_cards",
+                        "label": "Занятия",
+                        "name": "day_cards",
+                        "type": "repeater",
+                        "instructions": "Список занятий в этот день",
+                        "collapsed": "field_schedule_card_title",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "block",
+                        "button_label": "Добавить занятие",
+                        "sub_fields": [
+                            {
+                                "key": "field_schedule_card_title",
+                                "label": "Название занятия",
+                                "name": "card_title",
+                                "type": "text",
+                                "default_value": "",
+                                "placeholder": "\"Умники разумники\""
+                            },
+                            {
+                                "key": "field_schedule_card_title_color",
+                                "label": "Цвет названия",
+                                "name": "card_title_color",
+                                "type": "select",
+                                "choices": {
+                                    "": "Обычный",
+                                    "pink": "Розовый",
+                                    "blue": "Синий",
+                                    "green": "Зелёный"
+                                },
+                                "default_value": ""
+                            },
+                            {
+                                "key": "field_schedule_card_time",
+                                "label": "Время",
+                                "name": "card_time",
+                                "type": "text",
+                                "default_value": "9:00",
+                                "placeholder": "9:00"
+                            },
+                            {
+                                "key": "field_schedule_card_age",
+                                "label": "Возраст группы",
+                                "name": "card_age",
+                                "type": "text",
+                                "default_value": "",
+                                "placeholder": "3-5 лет"
+                            },
+                            {
+                                "key": "field_schedule_card_duration",
+                                "label": "Длительность",
+                                "name": "card_duration",
+                                "type": "text",
+                                "default_value": "45 минут",
+                                "placeholder": "45 минут"
+                            },
+                            {
+                                "key": "field_schedule_card_description",
+                                "label": "Описание / примечание",
+                                "name": "card_description",
+                                "type": "text",
+                                "default_value": "",
+                                "placeholder": "На русском языке или Лепка"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "tantana-settings"
+                }
+            ]
+        ],
+        "menu_order": 5,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "active": true,
+        "description": "Блок «Расписание занятий» на главной странице"
+    }
+]

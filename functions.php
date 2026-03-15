@@ -48,6 +48,21 @@ if (function_exists('acf_add_options_page')) {
 }
 
 /**
+ * Регистрация группы ACF «Расписание занятий» из JSON
+ */
+add_action('acf/init', function () {
+    if (!function_exists('acf_add_local_field_group')) return;
+    $path = get_template_directory() . '/acf/acf-schedule.json';
+    if (!is_readable($path)) return;
+    $json = json_decode(file_get_contents($path), true);
+    if (!empty($json) && is_array($json)) {
+        foreach ($json as $group) {
+            acf_add_local_field_group($group);
+        }
+    }
+});
+
+/**
  * Регистрация Custom Post Type "Отзывы"
  */
 function tantana_register_reviews_post_type() {
