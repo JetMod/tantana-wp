@@ -21,7 +21,7 @@
           </div>
 
           <div class="news-blog__center">
-            <img
+            <img loading="lazy"
               src="<?php echo !empty($newsblog_hero['center_image']) ? $newsblog_hero['center_image'] : '/wp-content/uploads/2025/04/newsCenter.png'; ?>"
               alt="<?php echo $newsblog_title; ?>"
               class="news-blog__fon"
@@ -30,7 +30,7 @@
               <h1 class="news-blog__center_title">
                 <?php echo $newsblog_title; ?>
               </h1>
-              <img
+              <img loading="lazy"
                 src="<?php echo !empty($newsblog_hero['content_image']) ? $newsblog_hero['content_image'] : '/wp-content/uploads/2025/04/newsCenteriMG.png'; ?>"
                 alt="<?php echo $newsblog_title; ?>"
                 class="news-blog__center_img"
@@ -90,19 +90,19 @@
         <div class="news-blog__img_container">
           <?php if (!empty($newsblog_images['top'])): ?>
             <?php foreach ($newsblog_images['top'] as $image): ?>
-              <img
+              <img loading="lazy"
                 src="<?php echo !empty($image['image']) ? $image['image'] : '/wp-content/uploads/2025/04/newsimg1.png'; ?>"
                 alt="<?php echo !empty($image['alt']) ? $image['alt'] : $newsblog_title; ?>"
                 class="news-blog__img_container_img"
               />
             <?php endforeach; ?>
           <?php else: ?>
-            <img
+            <img loading="lazy"
               src="/wp-content/uploads/2025/04/newsimg1.png"
               alt="<?php echo $newsblog_title; ?>"
               class="news-blog__img_container_img"
             />
-            <img
+            <img loading="lazy"
               src="/wp-content/uploads/2025/04/newsimg2.png"
               alt="<?php echo $newsblog_title; ?>"
               class="news-blog__img_container_img"
@@ -112,7 +112,7 @@
 
         <div class="news-blog__img_container2">
           <?php if (!empty($newsblog_images['bottom'])): ?>
-            <img
+            <img loading="lazy"
               src="<?php echo !empty($newsblog_images['bottom']['image']) ? $newsblog_images['bottom']['image'] : '/wp-content/uploads/2025/04/newsimg3.png'; ?>"
               alt="<?php echo !empty($newsblog_images['bottom']['alt']) ? $newsblog_images['bottom']['alt'] : $newsblog_title; ?>"
               class="news-blog__img_container2_img"
@@ -124,7 +124,7 @@
               <?php echo !empty($newsblog_images['bottom']['text_bottom']) ? $newsblog_images['bottom']['text_bottom'] : 'Запланируйте лето в "Тантан" — и пусть каждый день вашего ребенка будет наполнен радостью, улыбками и новыми открытиями!'; ?>
             </p>
           <?php else: ?>
-            <img
+            <img loading="lazy"
               src="/wp-content/uploads/2025/04/newsimg3.png"
               alt="<?php echo $newsblog_title; ?>"
               class="news-blog__img_container2_img"

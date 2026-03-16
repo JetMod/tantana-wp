@@ -76,7 +76,7 @@
                     }
                     ?>
                     <div class="reviews__card<?php echo $card_class; ?>">
-                        <img
+                        <img loading="lazy"
                                 src="<?php echo $review['icon']; ?>"
                                 alt="Иконка отзыва"
                                 class="reviews__icon<?php echo $icon_class; ?>"
@@ -85,7 +85,7 @@
                             <?php echo $review['text']; ?>
                         </p>
                         <div class="reviews__card_container">
-                            <img
+                            <img loading="lazy"
                                     src="<?php echo $review['avatar']; ?>"
                                     alt="Автор отзыва: <?php echo $review['author']; ?>"
                                     class="reviews__avatar"
@@ -135,7 +135,7 @@
                     }
                     ?>
                     <div class="reviews__card<?php echo $card_class; ?>">
-                        <img
+                        <img loading="lazy"
                                 src="<?php echo $review_icon; ?>"
                                 alt="Иконка отзыва"
                                 class="reviews__icon<?php echo $icon_class; ?>"
@@ -144,7 +144,7 @@
                             <?php echo $review_text; ?>
                         </p>
                         <div class="reviews__card_container">
-                            <img
+                            <img loading="lazy"
                                     src="<?php echo $review_avatar; ?>"
                                     alt="Автор отзыва: <?php echo $review_author ?: 'Гость'; ?>"
                                     class="reviews__avatar"

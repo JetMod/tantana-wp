@@ -10,7 +10,15 @@
  */
 function tantana_assets() {
     wp_enqueue_style( 'maincss', get_template_directory_uri() . '/src/styles/style.css' );
-    wp_enqueue_style( 'css', get_template_directory_uri() . '/style.css' );
+    // style.css — только метаданные темы WP, основные стили в src/styles/style.css
+
+    wp_enqueue_script(
+        'tantana-theme',
+        get_template_directory_uri() . '/src/script/theme.js',
+        array(),
+        '1.0.0',
+        true
+    );
 
     // wp_enqueue_style( 'icomoon', get_template_directory_uri() . '/src/styles/style.css.map' );
     // wp_enqueue_style( 'hamb', get_template_directory_uri() . '/src/styles/_main.scss' );
@@ -22,6 +30,13 @@ function tantana_assets() {
     // wp_enqueue_script( 'main', get_template_directory_uri() . '/src/js/main.js', array(), '20151215', true );
 }
 add_action( 'wp_enqueue_scripts', 'tantana_assets' );
+
+add_filter( 'script_loader_tag', function( $tag, $handle ) {
+    if ( 'tantana-theme' === $handle ) {
+        return str_replace( ' src', ' defer src', $tag );
+    }
+    return $tag;
+}, 10, 2 );
 
 // Включение поддержки миниатюр
 add_theme_support( 'post-thumbnails' );

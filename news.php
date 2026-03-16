@@ -81,7 +81,7 @@
                     }
                     ?>
                     <li class="news__card">
-                        <img
+                        <img loading="lazy"
                                 src="<?php echo $news['image']; ?>"
                                 alt="Торжество Tantana"
                                 class="news__img"
@@ -115,7 +115,7 @@
 
                     ?>
                     <li class="news__card">
-                        <img
+                        <img loading="lazy"
                                 src="<?php echo $news_image; ?>"
                                 alt="<?php the_title(); ?>"
                                 class="news__img"
