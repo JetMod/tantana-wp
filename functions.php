@@ -7,16 +7,26 @@
 
 /**
  * Подключение стилей и скриптов
+ * В production загружаются минифицированные версии (style.min.css, theme.min.js)
  */
 function tantana_assets() {
-    wp_enqueue_style( 'maincss', get_template_directory_uri() . '/src/styles/style.css' );
-    // style.css — только метаданные темы WP, основные стили в src/styles/style.css
+    $theme_dir = get_template_directory();
+    $theme_uri = get_template_directory_uri();
+    $use_min = ! defined( 'WP_DEBUG' ) || ! WP_DEBUG;
 
+    $css_file = ( $use_min && file_exists( $theme_dir . '/src/styles/style.min.css' ) )
+        ? '/src/styles/style.min.css'
+        : '/src/styles/style.css';
+    wp_enqueue_style( 'maincss', $theme_uri . $css_file, array(), filemtime( $theme_dir . $css_file ) );
+
+    $js_file = ( $use_min && file_exists( $theme_dir . '/src/script/theme.min.js' ) )
+        ? '/src/script/theme.min.js'
+        : '/src/script/theme.js';
     wp_enqueue_script(
         'tantana-theme',
-        get_template_directory_uri() . '/src/script/theme.js',
+        $theme_uri . $js_file,
         array(),
-        '1.0.0',
+        filemtime( $theme_dir . $js_file ),
         true
     );
 

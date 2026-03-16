@@ -1,12 +1,19 @@
 {
+  "scripts": {
+    "build:css": "cleancss -o src/styles/style.min.css src/styles/style.css",
+    "build:js": "terser src/script/theme.js -o src/script/theme.min.js -c -m",
+    "build": "npm run build:css && npm run build:js"
+  },
   "devDependencies": {
     "@stylistic/stylelint-config": "^2.0.0",
     "@stylistic/stylelint-plugin": "^3.0.0",
+    "clean-css-cli": "^5.6.0",
     "stylelint": "^16.18.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-order": "^6.0.4",
-    "stylelint-scss": "^6.4.1"
+    "stylelint-scss": "^6.4.1",
+    "terser": "^5.36.0"
   },
   "dependencies": {
     "csscomb": "^4.3.0",
