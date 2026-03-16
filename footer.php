@@ -109,17 +109,17 @@
 
         <div class="footer__info">
           <p class="footer__info_name">телефон:</p>
-          <p class="footer__info_description"><?php echo get_field('phone', 'option') ?: '+7 (978) 888 43 08'; ?></p>
+          <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9+]/', '', get_field('phone', 'option') ?: '+79788884308')); ?>" class="footer__info_description footer__phone-link"><?php echo esc_html(get_field('phone', 'option') ?: '+7 (978) 888 43 08'); ?></a>
         </div>
 
           <div class="footer__info">
           <p class="footer__info_name">телефон пицерии:</p>
-          <p class="footer__info_description"><?php echo get_field('phone1', 'option') ?: '+7 (978) 888 43 53'; ?></p>
+          <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9+]/', '', get_field('phone1', 'option') ?: '+79788884353')); ?>" class="footer__info_description footer__phone-link"><?php echo esc_html(get_field('phone1', 'option') ?: '+7 (978) 888 43 53'); ?></a>
         </div>
 
         <div class="footer__info">
           <p class="footer__info_name">email:</p>
-          <p class="footer__info_description"><?php echo get_field('email', 'option') ?: 'info@tantana-kids.ru'; ?></p>
+          <p class="footer__info_description"><?php echo get_field('email', 'option') ?: 'tantana-crimea@yandex.ru'; ?></p>
         </div>
 
         <div class="footer__info footer__info_privacy">

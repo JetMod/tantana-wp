@@ -29,11 +29,9 @@ get_header();
 		  <div class="contact__container">
 			  <h2 class="contact__container_text">контактные данные</h2>
 			  <ul class="contact__ul">
-				  <li class="contact__li">
-					  <?php the_field( 'address' ); ?>
-					  <?php the_field( 'phone' ); ?>
-					  <?php the_field( 'email' ); ?>
-				  </li>
+				  <li class="contact__li"><?php the_field( 'address' ); ?></li>
+				  <li class="contact__li"><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', get_field( 'phone' ) ?: '+79788884308' ) ); ?>" class="contact__link"><?php echo esc_html( get_field( 'phone' ) ?: '+7 (978) 888 43 08' ); ?></a></li>
+				  <li class="contact__li"><a href="mailto:<?php echo esc_attr( get_field( 'email' ) ?: 'tantana-crimea@yandex.ru' ); ?>" class="contact__link"><?php echo esc_html( get_field( 'email' ) ?: 'tantana-crimea@yandex.ru' ); ?></a></li>
 
 				  <li class="contact__li">
 					  График работы:
