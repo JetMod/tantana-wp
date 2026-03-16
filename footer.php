@@ -14,6 +14,17 @@
     </div>
 </div>
 
+<!-- Cookie consent banner -->
+<div class="cookie-banner" id="cookieBanner" aria-hidden="true">
+    <div class="cookie-banner__inner">
+        <p class="cookie-banner__text">
+            Сайт использует cookies для корректной работы и аналитики. Продолжая, вы соглашаетесь с
+            <a href="<?php echo esc_url(home_url('/personal-data/')); ?>" class="cookie-banner__link">Политикой конфиденциальности</a>.
+        </p>
+        <button type="button" class="cookie-banner__btn" aria-label="Принять">Понятно</button>
+    </div>
+</div>
+
 <!-- Попап успешной отправки заявки -->
 <div class="success-popup" id="successPopup" aria-hidden="true">
     <div class="success-popup__overlay"></div>
@@ -109,6 +120,10 @@
         <div class="footer__info">
           <p class="footer__info_name">email:</p>
           <p class="footer__info_description"><?php echo get_field('email', 'option') ?: 'info@tantana-kids.ru'; ?></p>
+        </div>
+
+        <div class="footer__info footer__info_privacy">
+          <a href="<?php echo esc_url(home_url('/personal-data/')); ?>" class="footer__privacy-link">Политика персональных данных</a>
         </div>
       </div>
 
@@ -265,6 +280,22 @@ openButtons.forEach((btn) => {
 
       if (successCloseBtn) successCloseBtn.addEventListener('click', closeSuccessPopup);
       if (successOverlay) successOverlay.addEventListener('click', closeSuccessPopup);
+    }
+
+    // Cookie banner
+    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieBannerBtn = document.querySelector('.cookie-banner__btn');
+    if (cookieBanner && cookieBannerBtn) {
+      const cookieAccepted = localStorage.getItem('tantana_cookie_consent');
+      if (!cookieAccepted) {
+        cookieBanner.classList.add('cookie-banner_visible');
+        cookieBanner.setAttribute('aria-hidden', 'false');
+      }
+      cookieBannerBtn.addEventListener('click', function() {
+        localStorage.setItem('tantana_cookie_consent', '1');
+        cookieBanner.classList.remove('cookie-banner_visible');
+        cookieBanner.setAttribute('aria-hidden', 'true');
+      });
     }
   });
 </script>
