@@ -19,7 +19,7 @@
     <div class="cookie-banner__inner">
         <p class="cookie-banner__text">
             Сайт использует cookies для корректной работы и аналитики. Продолжая, вы соглашаетесь с
-            <a href="<?php echo esc_url(home_url('/personal-data/')); ?>" class="cookie-banner__link">Политикой конфиденциальности</a>.
+            <a href="<?php echo esc_url(home_url('/privacy/')); ?>" class="cookie-banner__link">Политикой конфиденциальности</a>.
         </p>
         <button type="button" class="cookie-banner__btn" aria-label="Принять">Понятно</button>
     </div>
@@ -123,7 +123,7 @@
         </div>
 
         <div class="footer__info footer__info_privacy">
-          <a href="<?php echo esc_url(home_url('/personal-data/')); ?>" class="footer__privacy-link">Политика персональных данных</a>
+          <a href="<?php echo esc_url(home_url('/privacy/')); ?>" class="footer__privacy-link">Политика персональных данных</a>
         </div>
       </div>
 
@@ -301,8 +301,12 @@ openButtons.forEach((btn) => {
 </script>
 
 <script>
-    
-    document.addEventListener('DOMContentLoaded', () => {
+    (function runWhenReady() {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', runWhenReady);
+            return;
+        }
+
     // SLIDER
 
     const slideImage = document.querySelector('.gallery__slider-slide img');
@@ -392,24 +396,6 @@ document.querySelectorAll(".schedule__day").forEach((day) => {
     });
 });
 
-    day.addEventListener("click", function () {
-        this.classList.toggle("active");
-
-        const scheduleCards = this.querySelector(".schedule__cards");
-        if (scheduleCards) {
-            if (this.classList.contains("active")) {
-                scheduleCards.style.maxHeight = scheduleCards.scrollHeight + "px";
-                scheduleCards.style.opacity = "1";
-                scheduleCards.style.visibility = "visible";
-            } else {
-                scheduleCards.style.maxHeight = "0";
-                scheduleCards.style.opacity = "0";
-                scheduleCards.style.visibility = "hidden";
-            }
-        }
-    });
-});
-
 
 document.querySelectorAll('.questions__toggle').forEach(toggle => {
     toggle.addEventListener('click', () => {
@@ -417,6 +403,8 @@ document.querySelectorAll('.questions__toggle').forEach(toggle => {
         questionItem.classList.toggle('active');
     });
 });
+
+})();
 
 
 //запрет ввода букв в инпут

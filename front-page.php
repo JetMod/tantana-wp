@@ -493,7 +493,7 @@ get_header();
 
                         <div class="directions__container_card">
                             <div class="directions__circle directions__blue">
-                                <span class="directions__circle_titlen">Л</span>
+                                <span class="directions__circle_title">Л</span>
                             </div>
                             <p class="directions__circle_text">ЛОГОПЕДИЯ И ДЕФЕКТОЛОГИЯ</p>
                         </div>
