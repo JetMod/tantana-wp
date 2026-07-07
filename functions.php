@@ -7,16 +7,14 @@
 
 /**
  * Подключение стилей и скриптов
- * В production загружаются минифицированные версии (style.min.css, theme.min.js)
+ * CSS подключаем из исходного файла style.css
  */
 function tantana_assets() {
     $theme_dir = get_template_directory();
     $theme_uri = get_template_directory_uri();
     $use_min = ! defined( 'WP_DEBUG' ) || ! WP_DEBUG;
 
-    $css_file = ( $use_min && file_exists( $theme_dir . '/src/styles/style.min.css' ) )
-        ? '/src/styles/style.min.css'
-        : '/src/styles/style.css';
+    $css_file = '/src/styles/style.css';
     wp_enqueue_style( 'maincss', $theme_uri . $css_file, array(), filemtime( $theme_dir . $css_file ) );
 
     $js_file = ( $use_min && file_exists( $theme_dir . '/src/script/theme.min.js' ) )
@@ -29,6 +27,22 @@ function tantana_assets() {
         filemtime( $theme_dir . $js_file ),
         true
     );
+
+    $request_path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+    $request_path = untrailingslashit($request_path ?: '/');
+    $is_news_like_page = ($request_path === '/news') || str_starts_with($request_path, '/news/');
+
+    if ($is_news_like_page) {
+        $news_css_file = '/src/styles/style-news.css';
+        if (file_exists($theme_dir . $news_css_file)) {
+            wp_enqueue_style(
+                'tantana-news-css',
+                $theme_uri . $news_css_file,
+                array('maincss'),
+                filemtime($theme_dir . $news_css_file)
+            );
+        }
+    }
 
     // wp_enqueue_style( 'icomoon', get_template_directory_uri() . '/src/styles/style.css.map' );
     // wp_enqueue_style( 'hamb', get_template_directory_uri() . '/src/styles/_main.scss' );
@@ -60,17 +74,20 @@ add_action('after_setup_theme', function () {
   
 
 /**
- * ACF Options Page
+ * ACF Options Page (только на acf/init — иначе WP 6.7+ ругается на раннюю загрузку переводов acf)
  */
-if (function_exists('acf_add_options_page')) {
-    acf_add_options_page(array(
+add_action( 'acf/init', function () {
+    if ( ! function_exists( 'acf_add_options_page' ) ) {
+        return;
+    }
+    acf_add_options_page( array(
         'page_title' => 'Настройки Тантана',
         'menu_title' => 'Настройки Тантана',
-        'menu_slug' => 'tantana-settings',
+        'menu_slug'  => 'tantana-settings',
         'capability' => 'edit_posts',
-        'redirect' => false
-    ));
-}
+        'redirect'   => false,
+    ) );
+} );
 
 /**
  * Регистрация группы ACF «Расписание занятий» из JSON
@@ -171,6 +188,31 @@ wp_mail( $to, $subject, $message, $headers );
 wp_die();
 }
 
+/**
+ * Статическая страница новости без записи в админке.
+ */
+function tantana_is_large_family_news_page() {
+    $request_path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+    $request_path = untrailingslashit($request_path ?: '/');
+    return $request_path === '/news/mnogodetnym-skidka';
+}
+
+add_action('template_redirect', function () {
+    if (!tantana_is_large_family_news_page()) {
+        return;
+    }
+
+    global $wp_query;
+    if ($wp_query) {
+        $wp_query->is_404 = false;
+    }
+
+    status_header(200);
+    nocache_headers();
+    include get_template_directory() . '/news-page/static-news-large-family.php';
+    exit;
+});
+
 // ===== SEO CONFIG (без ACF) =====
 function tantana_seo_pages() {
     return [
@@ -261,6 +303,10 @@ function tantana_get_single_heading($post_id = null) {
 add_filter('pre_get_document_title', function ($title) {
     $pages = tantana_seo_pages();
 
+    if (tantana_is_large_family_news_page()) {
+        return 'Скидка 30% многодетным семьям и детям с ОВЗ — Tantana Симферополь';
+    }
+
     if (is_front_page() && isset($pages['front'])) {
         return $pages['front']['title'];
     }
@@ -286,7 +332,15 @@ add_action('wp_head', function () {
     $og_type = 'website';
 
     // Определяем страницу
-    if (is_front_page()) {
+    if (tantana_is_large_family_news_page()) {
+        $og_type = 'article';
+        $data = [
+            'title' => 'Скидка 30% многодетным семьям и детям с ОВЗ — Tantana Симферополь',
+            'description' => 'Социальная акция Tantana: скидка 30% на посещение игровой в будние дни для многодетных семей и детей с ограниченными возможностями. Узнайте условия и забронируйте визит.',
+            'image' => home_url('/wp-content/uploads/2025/04/news2.webp'),
+            'url' => home_url('/news/mnogodetnym-skidka/'),
+        ];
+    } elseif (is_front_page()) {
         $data = $pages['front'] ?? [];
     } elseif (is_single()) {
         $og_type = 'article';
@@ -317,9 +371,10 @@ add_action('wp_head', function () {
     $title = $data['title'] ?? wp_get_document_title();
     $desc  = $data['description'] ?? $default_desc;
     $image = $data['image'] ?? tantana_logo_url();
-    $url   = esc_url(is_front_page() ? home_url('/') : get_permalink());
+    $url   = esc_url($data['url'] ?? (is_front_page() ? home_url('/') : get_permalink()));
 
     echo "\n";
+    echo '<link rel="canonical" href="' . $url . '">' . "\n";
     if (!empty($desc)) {
         echo '<meta name="description" content="' . esc_attr($desc) . '">' . "\n";
       }
@@ -388,23 +443,34 @@ add_action('wp_head', function () {
 
 // Структурированные данные для отдельных новостей
 add_action('wp_head', function () {
-    if (!is_single()) {
+    if (!is_single() && !tantana_is_large_family_news_page()) {
         return;
     }
 
-    $post_id = get_the_ID();
-    $title   = tantana_get_single_heading($post_id);
-    $desc    = get_the_excerpt($post_id);
-    if (empty($desc)) {
-        $desc = wp_trim_words(wp_strip_all_tags(get_post_field('post_content', $post_id)), 24, '...');
+    if (tantana_is_large_family_news_page()) {
+        $title = 'Скидка 30% многодетным семьям и детям с ОВЗ';
+        $desc  = 'Социальная акция Tantana: скидка 30% на посещение игровой в будние дни для многодетных семей и детей с ограниченными возможностями.';
+        $image = esc_url(home_url('/wp-content/uploads/2025/04/news2.webp'));
+        $url   = esc_url(home_url('/news/mnogodetnym-skidka/'));
+        $date_published = '2026-04-29T09:00:00+03:00';
+        $date_modified  = current_time('c');
+        $author_name    = get_bloginfo('name') ?: 'Tantana';
+    } else {
+        $post_id = get_the_ID();
+        $title   = tantana_get_single_heading($post_id);
+        $desc    = get_the_excerpt($post_id);
+        if (empty($desc)) {
+            $desc = wp_trim_words(wp_strip_all_tags(get_post_field('post_content', $post_id)), 24, '...');
+        }
+        $image = get_the_post_thumbnail_url($post_id, 'full') ?: tantana_logo_url();
+        $url   = esc_url(get_permalink($post_id));
+        $date_published = get_the_date('c', $post_id);
+        $date_modified  = get_the_modified_date('c', $post_id);
+        $author_name    = get_the_author_meta('display_name', get_post_field('post_author', $post_id)) ?: (get_bloginfo('name') ?: 'Tantana');
     }
-    $image = get_the_post_thumbnail_url($post_id, 'full') ?: tantana_logo_url();
-    $url   = esc_url(get_permalink($post_id));
+
     $site  = esc_url(home_url('/'));
     $name  = get_bloginfo('name') ?: 'Tantana';
-    $date_published = get_the_date('c', $post_id);
-    $date_modified  = get_the_modified_date('c', $post_id);
-    $author_name    = get_the_author_meta('display_name', get_post_field('post_author', $post_id)) ?: $name;
 
     $schema = [
         '@context' => 'https://schema.org',
@@ -450,7 +516,20 @@ add_action('wp_head', function () {
         'name' => 'Главная',
         'item' => $site_url,
     ];
-    if (is_single()) {
+    if (tantana_is_large_family_news_page()) {
+        $breadcrumbs[] = [
+            '@type' => 'ListItem',
+            'position' => $position++,
+            'name' => 'Новости',
+            'item' => esc_url(home_url('/news/')),
+        ];
+        $breadcrumbs[] = [
+            '@type' => 'ListItem',
+            'position' => $position++,
+            'name' => 'Скидка 30% многодетным семьям и детям с ОВЗ',
+            'item' => esc_url(home_url('/news/mnogodetnym-skidka/')),
+        ];
+    } elseif (is_single()) {
         $breadcrumbs[] = [
             '@type' => 'ListItem',
             'position' => $position++,

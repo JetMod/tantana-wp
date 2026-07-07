@@ -14,14 +14,25 @@
     </div>
 </div>
 
-<!-- Cookie consent banner -->
-<div class="cookie-banner" id="cookieBanner" aria-hidden="true">
-    <div class="cookie-banner__inner">
-        <p class="cookie-banner__text">
-            Сайт использует cookies для корректной работы и аналитики. Продолжая, вы соглашаетесь с
-            <a href="<?php echo esc_url(home_url('/privacy/')); ?>" class="cookie-banner__link">Политикой конфиденциальности</a>.
-        </p>
-        <button type="button" class="cookie-banner__btn" aria-label="Принять">Понятно</button>
+<!-- Согласие на Яндекс.Метрику: панель снизу справа, стеклянный фон -->
+<div class="metrika-consent" id="metrikaConsent" aria-hidden="true" role="region" aria-labelledby="metrikaConsentTitle">
+    <div class="metrika-consent__panel">
+        <div class="metrika-consent__inner">
+            <h2 id="metrikaConsentTitle" class="sr-only">Согласие на использование Яндекс.Метрики</h2>
+            <p class="metrika-consent__text">
+                Сайт использует cookies, Яндекс.Метрику для анализа посещаемости. Подробнее в
+                <a href="<?php echo esc_url(home_url('/privacy/')); ?>" class="metrika-consent__link">политике конфиденциальности</a>.
+            </p>
+            <label class="metrika-consent__label">
+                <input type="checkbox" class="metrika-consent__checkbox" id="metrikaConsentCheckbox" />
+                <span class="metrika-consent__checkbox-ui" aria-hidden="true"></span>
+                <span class="metrika-consent__label-text">Я даю согласие на обработку персональных данных</span>
+            </label>
+            <div class="metrika-consent__actions">
+                <button type="button" class="metrika-consent__btn metrika-consent__btn--primary" id="metrikaConsentAccept" disabled>Принять</button>
+                <button type="button" class="metrika-consent__btn metrika-consent__btn--outline" id="metrikaConsentDecline">Отклонить</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -120,6 +131,9 @@
     
         <div class="footer__info footer__info_privacy">
           <a href="<?php echo esc_url(home_url('/privacy/')); ?>" class="footer__privacy-link">Политика персональных данных</a>
+          <p class="footer__legal-note">
+            Информация на сайте носит информационный характер и не является публичной офертой. Актуальные условия и стоимость услуг уточняйте у администратора.
+          </p>
         </div>
       </div>
 

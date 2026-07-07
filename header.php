@@ -4,20 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="yandex-verification" content="d951b79c1c25beea" />
-    <!-- <link rel="stylesheet" href="./src/styles/style.css" /> -->
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106920222', 'ym');
-
-        ym(106920222, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/106920222" style="position:absolute; left:-9999px;" alt="Счётчик Яндекс.Метрики" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+    <!-- Yandex.Metrika: подключается после согласия в theme.js (tantanaLoadYandexMetrika) -->
     <?php wp_head(); ?>
   </head>
   <body>
@@ -75,7 +62,7 @@
                 <li><a href="<?php echo site_url('/celebrations'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Торжества</a></li>
                 <li><a href="<?php echo site_url('/camp'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Tantana Camp</a></li>
                 <li><a href="<?php echo site_url('/gamecenter'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Игровой центр</a></li>
-                <li><a href="<?php echo site_url('/master-classes'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Мастер-классы</a></li>
+                <li><a href="<?php echo site_url('/masterСlasses'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Мастер-классы</a></li>
                 <li><a href="<?php echo site_url('/news'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Новости</a></li>
                 <li><a href="<?php echo site_url('/contacts'); ?>" class="sidebar__nav-link" onclick="sidebarClose()">Контакты</a></li>
             </ul>

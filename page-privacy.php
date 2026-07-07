@@ -10,10 +10,16 @@ get_header();
 <?php
 // Данные оператора (ООО «Шен» — юридическое лицо, владеющее сайтом Tantana)
 $operator = [
-    'full_name' => 'Общество с ограниченной ответственностью «Шен»',
-    'address'   => '295000, Республика Крым, г. Симферополь, ул. Генерала Васильева, д. 40',
-    'phone'     => '(3652) 583-155',
-    'email'     => 'buh@shen.com.ru',
+    'full_name'    => 'Общество с ограниченной ответственностью «Шен»',
+    'address'      => '295000, Республика Крым, г. Симферополь, ул. Генерала Васильева, д. 40а',
+    'phone'        => '+7 (978) 888 43 08',
+    'phone_href'   => '+79788884308',
+    'email'        => 'tantana-crimea@yandex.ru',
+    'inn'          => '9102157060',
+    'kpp'          => '910201001',
+    'ogrn'         => '1159102021187',
+    'policy_date'  => '29 марта 2026 г.',
+    'policy_ver'   => '2.0',
 ];
 ?>
 
@@ -26,6 +32,7 @@ $operator = [
                 <span class="sr-only">— детский центр Tantana, Симферополь</span>
             </h1>
             <p class="privacy__subtitle">Обработка и защита персональных данных на сайте tantana-crimea.ru</p>
+            <p class="privacy__meta">Версия <?php echo esc_html($operator['policy_ver']); ?> &nbsp;·&nbsp; Принята <?php echo esc_html($operator['policy_date']); ?></p>
         </div>
 
         <div class="privacy__content">
@@ -39,8 +46,11 @@ $operator = [
                 </p>
                 <ul class="privacy__operator-list">
                     <li><strong><?php echo esc_html($operator['full_name']); ?></strong></li>
+                    <li><strong>ИНН:</strong> <?php echo esc_html($operator['inn']); ?></li>
+                    <li><strong>КПП:</strong> <?php echo esc_html($operator['kpp']); ?></li>
+                    <li><strong>ОГРН:</strong> <?php echo esc_html($operator['ogrn']); ?></li>
                     <li><strong>Адрес:</strong> <?php echo esc_html($operator['address']); ?></li>
-                    <li><strong>Телефон:</strong> <a href="tel:+73652583155" class="privacy__link"><?php echo esc_html($operator['phone']); ?></a></li>
+                    <li><strong>Телефон:</strong> <a href="tel:<?php echo esc_attr($operator['phone_href']); ?>" class="privacy__link"><?php echo esc_html($operator['phone']); ?></a></li>
                     <li><strong>Email:</strong> <a href="mailto:<?php echo esc_attr($operator['email']); ?>" class="privacy__link"><?php echo esc_html($operator['email']); ?></a></li>
                 </ul>
                 <p class="privacy__text">
@@ -137,12 +147,18 @@ $operator = [
             </div>
 
             <div class="privacy__card">
-                <h2 class="privacy__section-title"><span class="privacy__num">9</span> Использование файлов cookies</h2>
+                <h2 class="privacy__section-title"><span class="privacy__num">9</span> Использование файлов cookies и сервиса Яндекс.Метрика</h2>
                 <p class="privacy__text">
-                    Сайт использует файлы cookies для обеспечения корректной работы сайта, анализа посещаемости и улучшения пользовательского опыта.
+                    Сайт использует файлы cookies для обеспечения корректной работы, анализа посещаемости и улучшения пользовательского опыта.
                 </p>
                 <p class="privacy__text">
-                    Продолжая использовать Сайт, пользователь выражает согласие на использование файлов cookies.
+                    Для анализа посещаемости используется сервис веб-аналитики <strong>Яндекс.Метрика</strong> (оператор — ООО «Яндекс», г. Москва). Сервис подключается <strong>исключительно после получения явного согласия</strong> пользователя — путём активного подтверждения в уведомлении на сайте.
+                </p>
+                <p class="privacy__text">
+                    Яндекс.Метрика собирает обезличенные данные о посещениях (IP-адрес в анонимизированном виде, информация о браузере, действия на странице). Данные передаются в Яндекс и обрабатываются в соответствии с <a href="https://yandex.ru/legal/confidential/" target="_blank" rel="noopener noreferrer" class="privacy__link">политикой конфиденциальности Яндекса</a>.
+                </p>
+                <p class="privacy__text">
+                    Пользователь вправе в любой момент отозвать своё согласие, удалив cookies сайта в настройках браузера. При следующем посещении сайта уведомление о согласии будет показано повторно.
                 </p>
             </div>
 
@@ -152,7 +168,7 @@ $operator = [
                     Оператор вправе вносить изменения в настоящую Политику обработки персональных данных.
                 </p>
                 <p class="privacy__text">
-                    Актуальная версия Политики всегда доступна на данной странице сайта.
+                    Актуальная версия Политики всегда доступна на данной странице сайта. Текущая версия: <strong><?php echo esc_html($operator['policy_ver']); ?></strong>, принята <strong><?php echo esc_html($operator['policy_date']); ?></strong>.
                 </p>
             </div>
 
@@ -161,7 +177,7 @@ $operator = [
                     <h2 class="privacy__contact-title">Контакты оператора</h2>
                     <p class="privacy__contact-desc">По всем вопросам, связанным с обработкой персональных данных, пользователь может обратиться:</p>
                     <div class="privacy__contact-grid">
-                        <a href="tel:+73652583155" class="privacy__contact-item">
+                        <a href="tel:<?php echo esc_attr($operator['phone_href']); ?>" class="privacy__contact-item">
                             <span class="privacy__contact-label">Телефон</span>
                             <span class="privacy__contact-value"><?php echo esc_html($operator['phone']); ?></span>
                         </a>
@@ -172,6 +188,10 @@ $operator = [
                         <div class="privacy__contact-item privacy__contact-item_address">
                             <span class="privacy__contact-label">Адрес</span>
                             <span class="privacy__contact-value"><?php echo esc_html($operator['address']); ?></span>
+                        </div>
+                        <div class="privacy__contact-item privacy__contact-item_address">
+                            <span class="privacy__contact-label">ИНН / КПП / ОГРН</span>
+                            <span class="privacy__contact-value"><?php echo esc_html($operator['inn']); ?> / <?php echo esc_html($operator['kpp']); ?> / <?php echo esc_html($operator['ogrn']); ?></span>
                         </div>
                     </div>
                 </div>

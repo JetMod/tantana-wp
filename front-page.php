@@ -78,7 +78,7 @@ get_header();
         $nav_section = get_field('home_nav_section');
         ?>
         <h2 class="nav__text"><?php echo $nav_section['nav_text'] ?: 'другие развлечения'; ?></h2>
-        <ul class="nav__ul"></ul>
+        <ul class="nav__ul">
             <?php
             
             if ($nav_section && !empty($nav_section['nav_items'])) {
@@ -1064,7 +1064,10 @@ const cards = document.querySelectorAll('.cert__card');
 cards.forEach((card) => {
   card.addEventListener('click', () => {
     const activeOrder = parseInt(card.dataset.order, 10);
-    reorderCards(activeOrder); // удалили проверку
+    // Если кликнули по верхней карточке, отправляем ее назад,
+    // чтобы по клику всегда происходило визуальное переключение.
+    const shiftOrder = activeOrder === 0 ? 1 : activeOrder;
+    reorderCards(shiftOrder);
   });
 });
 

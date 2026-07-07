@@ -158,4 +158,12 @@
             }
             ?>
         </div>
+        <div class="reviews__controls" aria-label="Управление слайдером отзывов">
+            <button class="reviews__arrow reviews__arrow_prev" type="button" aria-label="Предыдущий отзыв">
+                <span aria-hidden="true">&#8592;</span>
+            </button>
+            <button class="reviews__arrow reviews__arrow_next" type="button" aria-label="Следующий отзыв">
+                <span aria-hidden="true">&#8594;</span>
+            </button>
+        </div>
     </section>
